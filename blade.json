@@ -1,0 +1,77 @@
+{
+    "Blade Bootstrap Input Form Group": {
+        "prefix": "binput",
+        "body": [
+            "<div class='form-group'>",
+            "    <label for='${1:attribute}'> ${2:label} </label>",
+            "",
+            "    <input",
+            "        id='${1:attribute}' name='${1:attribute}' type='${3|text,number,password,date,phone|}'",
+            "        value='{{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}'",
+            "        class='form-control {{ !$$errors->has('${1:attribute}') ?: 'is-invalid' }}'>",
+            "",
+            "    <div class='invalid-feedback'>",
+            "        {{ $$errors->first('${1:attribute}') }}",
+            "    </div>",
+            "</div>"
+        ],
+        "description": "Blade bootstrap input form group"
+    },
+
+    "Blade Bootstrap Form": {
+        "prefix": "bform",
+        "body": [
+            "<form",
+            "    method='POST'",
+            "    action='{{ route('${1:route}') }}'",
+            "    >",
+            "",
+            "    @csrf",
+            "    ",
+            "    ${2}",
+            "",
+            "</form>",
+        ],
+        "description": "Blade bootstrap form"
+    },
+
+    "Blade Bootstrap Textarea": {
+        "prefix": "btext",
+        "body": [
+            "<div class='form-group'>",
+            "    <label for='${1:attribute}'> ${2:Label}: </label>",
+            "",
+            "    <textarea",
+            "        id='${1:attribute}' name='${1:attribute}'",
+            "        class='form-control {{ !$$errors->has('${1:attribute}') ?: 'is-invalid' }}'",
+            "        col='30' row='6'",
+            "        >",
+            "        {{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}",
+            "    </textarea>",
+            "",
+            "    <div class='invalid-feedback'>",
+            "        {{ $$errors->first('${1:attribute}') }}",
+            "    </div>",
+            "</div>"
+        ],
+        "description": "Blade bootstrap textarea"
+    },
+
+    "Blade Bootstrap Select Input": {
+        "prefix": "bsele",
+        "body": [
+            "<div class='form-group'>",
+            "    <label for='${1:attribute}'> ${2:label}: </label>",
+            "    <select name='${1:attribute}' id='${1:attribute}' class='form-control'>",
+            "        @foreach($${3:var_array} as $${4:var_key} => $${5:var_value})",
+            "        <option {{ old('${1:attribute}'${6:, $${7:object}->${8:attribute}}) !== $${4:var_key} ?: 'selected' }} value='{{ $${4:var_key} }}'> {{ $${5:var_value} }} </option>",
+            "        @endforeach",
+            "    </select>",
+            "    <div class='invalid-feedback'>",
+            "        {{ $$errors->first('${1:attribute}') }}",
+            "    </div>",
+            "</div>",
+        ],
+        "description": "Blade bootstrap select input"
+    }
+}
