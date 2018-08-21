@@ -31,5 +31,13 @@
             "eval(\\Psy\\sh());"
         ],
         "description": "Tinker shortcut"
+    },
+
+    "MySQL Schema Fix": {
+        "prefix": "myschema",
+        "body": [
+            "Schema::defaultStringLength(191);"
+        ],
+        "description": "MySQL Schema Fix"
     }
 }

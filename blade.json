@@ -23,11 +23,10 @@
         "body": [
             "<form",
             "    method='POST'",
-            "    action='{{ route('${1:route}') }}'",
-            "    >",
+            "    action='{{ route('${1:route}') }}'>",
             "",
             "    @csrf",
-            "    ",
+            "",
             "    ${2}",
             "",
             "</form>",
