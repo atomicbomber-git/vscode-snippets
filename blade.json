@@ -44,8 +44,7 @@
             "        id='${1:attribute}' name='${1:attribute}'",
             "        class='form-control {{ !$$errors->has('${1:attribute}') ?: 'is-invalid' }}'",
             "        col='30' row='6'",
-            "        >",
-            "        {{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}",
+            "        >{{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}",
             "    </textarea>",
             "",
             "    <div class='invalid-feedback'>",
@@ -72,5 +71,13 @@
             "</div>",
         ],
         "description": "Blade bootstrap select input"
+    },
+
+    "Meta Tag CSRF Blade": {
+        "prefix": "metacsrf",
+        "body": [
+            "<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">"
+        ],
+        "description": "Meta Tag CSRF Blade"
     }
 }
