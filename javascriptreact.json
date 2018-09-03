@@ -1,0 +1,36 @@
+{
+    "React Root Imports": {
+        "prefix": "rri",
+        "body": [
+            "import React, {Component} from 'react'",
+            "import ReactDOM from 'react-dom'"
+        ],
+        "description": "React.js Root Imports"
+    },
+
+    "React Class": {
+        "prefix": "rclass",
+        "body": [
+            "class ${1:ClassName} extends Component {",
+            "   constructor(props) {",
+            "       super(props)",
+            "   }",
+            "",
+            "   render() {",
+            "       return (${2})",
+            "   }",
+            "}"
+        ]
+    },
+
+    "React Root Render": {
+        "prefix": "rrr",
+        "body": [
+            "const rootElem = document.getElementById('${1:root-element-id}')",
+            "if (rootElem) {",
+            "   ReactDom.render(<${2:Component}/>, rootElem)",
+            "}"
+        ],
+        "description": "React.js Root Imports"
+    },
+}

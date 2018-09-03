@@ -3,7 +3,7 @@
         "prefix": "binput",
         "body": [
             "<div class='form-group'>",
-            "    <label for='${1:attribute}'> ${2:label} </label>",
+            "    <label for='${1:attribute}'> ${2:label}: </label>",
             "",
             "    <input",
             "        id='${1:attribute}' name='${1:attribute}' type='${3|text,number,password,date,phone|}'",
@@ -63,6 +63,24 @@
             "    <select name='${1:attribute}' id='${1:attribute}' class='form-control'>",
             "        @foreach($${3:var_array} as $${4:var_key} => $${5:var_value})",
             "        <option {{ old('${1:attribute}'${6:, $${7:object}->${8:attribute}}) !== $${4:var_key} ?: 'selected' }} value='{{ $${4:var_key} }}'> {{ $${5:var_value} }} </option>",
+            "        @endforeach",
+            "    </select>",
+            "    <div class='invalid-feedback'>",
+            "        {{ $$errors->first('${1:attribute}') }}",
+            "    </div>",
+            "</div>",
+        ],
+        "description": "Blade bootstrap select input"
+    },
+
+    "Blade Bootstrap Select Input (Simple)": {
+        "prefix": "bseli",
+        "body": [
+            "<div class='form-group'>",
+            "    <label for='${1:attribute}'> ${2:label}: </label>",
+            "    <select name='${1:attribute}' id='${1:attribute}' class='form-control'>",
+            "        @foreach($${3:var_array} as $${4:var})",
+            "        <option {{ old('${1:attribute}'${7:, $${8:object}->${9:attribute}}) !== $${4:var}->${5:key} ?: 'selected' }} value='{{ $${4:var}->${5:key} }}'> {{ $${4:var}->${5:value} }} </option>",
             "        @endforeach",
             "    </select>",
             "    <div class='invalid-feedback'>",
