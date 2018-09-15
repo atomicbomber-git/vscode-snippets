@@ -44,8 +44,7 @@
             "        id='${1:attribute}' name='${1:attribute}'",
             "        class='form-control {{ !$$errors->has('${1:attribute}') ?: 'is-invalid' }}'",
             "        col='30' row='6'",
-            "        >{{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}",
-            "    </textarea>",
+            "        >{{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}</textarea>",
             "",
             "    <div class='invalid-feedback'>",
             "        {{ $$errors->first('${1:attribute}') }}",
@@ -73,30 +72,85 @@
         "description": "Blade bootstrap select input"
     },
 
+    "Bootstrap Scaffold Ancestor Shared Layout": {
+        "prefix": "bootstrap_blade_scaffold_ancestor",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">",
+            "    <title> ${1:APP_NAME} </title>",
+            "    <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">",
+            "    <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">",
+            "</head>",
+            "<body>",
+            "    @include('shared.navbar')",
+            "    @yield('content')",
+            "    <script src=\"{{ asset('js/app.js') }}\"></script>",
+            "</body>",
+            "</html>",
+        ]
+    },
+
+    "Bootstrap Card": {
+        "prefix": "bootstrap_card",
+        "body": [
+            "<div class=\"card\">",
+            "    <div class=\"card-header\">",
+            "        <i class=\"fa fa-list\"></i>",
+            "        {$1:TITLE}",
+            "    </div>",
+            "    <div class=\"card-body\">",
+            "    </div>",
+            "</div>",
+        ]
+    },
+
     "Bootstrap Nav": {
         "prefix": "bootstrap_nav",
         "body": [
-            "<nav class=\"navbar navbar-dark bg-primary navbar-expand-lg navbar-light bg-light\">",
-            "    <a class=\"navbar-brand\" href=\"#\"> ${1:website_name} </a>",
-            "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">",
-            "        <span class=\"navbar-toggler-icon\"></span>",
-            "    </button>",
-            "    <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">",
-            "        <div class=\"navbar-nav\">",
-            "        <a class=\"nav-item nav-link active\" href=\"#\"> ${2:Link Label} </a>",
-            "        <a class=\"nav-item nav-link\" href=\"#\"> ${3:Link Label} </a>",
-            "        <a class=\"nav-item nav-link\" href=\"#\"> ${4:Link Label} </a>",
-            "        <a class=\"nav-item nav-link disabled\" href=\"#\"> ${5:Link Label} </a>",
+            "<nav class=\"navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light\">",
+            "    <div class=\"container\">",
+            "        <a class=\"navbar-brand\" href=\"#\"> Aplikasi Balanced Scorecard </a>",
+            "        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">",
+            "            <span class=\"navbar-toggler-icon\"></span>",
+            "        </button>",
+            "        <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">",
+            "            <div class=\"navbar-nav\">",
+            "            </div>",
             "        </div>",
             "    </div>",
             "</nav>",
         ]
     },
 
-    "Scaffold": {
+    "Bootstrap Breadcrumb": {
+        "prefix": "bootstrap_breadcrumb",
+        "body": [
+            "<nav aria-label=\"breadcrumb\">",
+            "    <ol class=\"breadcrumb\">",
+            "        <li class=\"breadcrumb-item\"><a href=\"#\"> Home </a></li>",
+            "        <li class=\"breadcrumb-item\"><a href=\"#\"> Library </a></li>",
+            "        <li class=\"breadcrumb-item active\" aria-current=\"page\"> Data </li>",
+            "    </ol>",
+            "</nav>",
+        ]
+    },
+
+    "Scaffold Page": {
         "prefix": "scaffold",
         "body": [
-
+            "@extends('shared.layout')",
+            "@section('title', '${1:document_title}')",
+            "@section('content')",
+            "<div class=\"container mt-5\">",
+            "    <h1>",
+            "        ${2:page_title}",
+            "    </h1>",
+            "</div>",
+            "@endsection",
         ]
     },
 
