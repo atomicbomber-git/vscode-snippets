@@ -73,7 +73,6 @@
         "description": "Blade bootstrap select input"
     },
 
-<<<<<<< HEAD
     "Bootstrap Nav": {
         "prefix": "bootstrap_nav",
         "body": [
@@ -175,7 +174,8 @@
             "    </div>",
             "</div>",
         ]
-=======
+    },
+
     "Blade Bootstrap Select Input (Simple)": {
         "prefix": "bseli",
         "body": [
@@ -200,6 +200,5 @@
             "<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">"
         ],
         "description": "Meta Tag CSRF Blade"
->>>>>>> 863848e598dedae7a318df735bfe1ccadb896e78
     }
 }
