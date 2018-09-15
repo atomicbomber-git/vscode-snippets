@@ -73,5 +73,108 @@
             "</div>",
         ],
         "description": "Blade bootstrap select input"
+    },
+
+    "Bootstrap Nav": {
+        "prefix": "bootstrap_nav",
+        "body": [
+            "<nav class=\"navbar navbar-dark bg-primary navbar-expand-lg navbar-light bg-light\">",
+            "    <a class=\"navbar-brand\" href=\"#\"> ${1:website_name} </a>",
+            "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">",
+            "        <span class=\"navbar-toggler-icon\"></span>",
+            "    </button>",
+            "    <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">",
+            "        <div class=\"navbar-nav\">",
+            "        <a class=\"nav-item nav-link active\" href=\"#\"> ${2:Link Label} </a>",
+            "        <a class=\"nav-item nav-link\" href=\"#\"> ${3:Link Label} </a>",
+            "        <a class=\"nav-item nav-link\" href=\"#\"> ${4:Link Label} </a>",
+            "        <a class=\"nav-item nav-link disabled\" href=\"#\"> ${5:Link Label} </a>",
+            "        </div>",
+            "    </div>",
+            "</nav>",
+        ]
+    },
+
+    "Scaffold": {
+        "prefix": "scaffold",
+        "body": [
+
+        ]
+    },
+
+    "Blade Foreach": {
+        "prefix": "bfore",
+        "body": [
+            "@foreach ($${1:list} as $${2:item})",
+            "${3:}",
+            "@endforeach"
+        ],
+        "description": "Blade Foreach Loop"
+    },
+
+    "Blade Section": {
+        "prefix": "bsect",
+        "body": [
+            "@section ('${1:section}')",
+            "${2:}",
+            "@endsection"
+        ],
+        "description": "Blade Section"
+    },
+
+    "Blade Loop Iteration Dot": {
+        "prefix": "loop_iter",
+        "body": "{{ $$loop->iteration }}."
+    },
+
+    "Bulma Card": {
+        "prefix": "bulmacard",
+        "body": [
+            "<div class=\"card is-inline-block\">",
+            "    <div class=\"card-header\">",
+            "        <h1 class=\"card-header-title\">",
+            "            <span class=\"icon mr-1\">",
+            "                <i class=\"fa fa-plus\"></i>",
+            "            </span>",
+            "            ${1:Title}",
+            "        </h1>",
+            "    </div>",
+            "    <div class=\"card-content\">",
+            "    ${1:Body}",
+            "    </div>",
+            "</div>",
+        ]
+    },
+
+    "Blade Bulma Input": {
+        "prefix": "bbulmainput",
+        "body": [
+            "<div class=\"field\">",
+            "    <label for=\"${1:field}\" class=\"label\"> ${2:label}: </label>",
+            "    <input value=\"{{ old('${1:field}') }}\" type=\"text\" name=\"${1:field}\" class=\"input {{ $$errors->first(\"${1:field}\", \"is-danger\") }}\">",
+            "    @if($$errors->has(\"${1:field}\"))",
+            "    <p class=\"help is-danger\"> {{ $$errors->first(\"${1:field}\") }} </p>",
+            "    @endif",
+            "</div>"
+        ],
+        "description": "Blade Bulma Input"
+    },
+
+    "Blade Bulma Select": {
+        "prefix": "bbselect",
+        "body": [
+            "<div class=\"field\">",
+            "    <label for=\"${1:field}\" class=\"label\"> ${2:label}: </label>",
+            "    <div class=\"select is-block\">",
+            "        <select name=\"${1:field}\" id=\"${1:field}\" style=\"width: 100%\">",
+            "            @foreach ($${3:options} as $${4:option})",
+            "            <option {{ old(\"${1:field}\") === $${4:option}->id ? 'selected' : '' }} value=\"{{ $${4:option}->id }}\">",
+            "                {{ $${4:option}->${5:option_label} }}",
+            "            </option>",
+            "            @endforeach",
+            "        </select>",
+            "    </div>",
+            "</div>",
+        ]
     }
 }

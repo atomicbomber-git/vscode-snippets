@@ -31,5 +31,38 @@
             "eval(\\Psy\\sh());"
         ],
         "description": "Tinker shortcut"
+    },
+
+    "Validate Inside Controller": {
+        "prefix": "validate",
+        "body": [
+            "$$data = $$this->validate(request(), [",
+            "    ${1}",
+            "]);"
+        ]
+    },
+
+    "Use Illuminate\\Validation\\Rule": {
+        "prefix": "use_validation_rule",
+        "body": "use Illuminate\\Validation\\Rule;",
+    },
+
+    "Use DB Facade": {
+        "prefix": "use_DB_facade",
+        "body": "use Illuminate\\Support\\Facades\\DB;"
+    },
+
+    "Use Collection Facade": {
+        "prefix": "use_collection_facade",
+        "body": "use Illuminate\\Support\\Collection;"
+    },
+
+    "DB::transaction()": {
+        "prefix": "db_transaction",
+        "body": [
+            "DB::transaction(function() {",
+            "    ${1}",
+            "});",
+        ]
     }
 }

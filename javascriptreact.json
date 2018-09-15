@@ -1,0 +1,9 @@
+{
+	"Bind Class Methods": {
+		"prefix": "Bind Class methods to `this`",
+		"body": [
+			"this.${1:funcName} = this.${1:funcName}.bind(this)"
+		],
+		"description": "Bind Class methods to `this`"
+	}
+}
