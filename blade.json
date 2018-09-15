@@ -3,7 +3,7 @@
         "prefix": "binput",
         "body": [
             "<div class='form-group'>",
-            "    <label for='${1:attribute}'> ${2:label} </label>",
+            "    <label for='${1:attribute}'> ${2:label}: </label>",
             "",
             "    <input",
             "        id='${1:attribute}' name='${1:attribute}' type='${3|text,number,password,date,phone|}'",
@@ -23,11 +23,10 @@
         "body": [
             "<form",
             "    method='POST'",
-            "    action='{{ route('${1:route}') }}'",
-            "    >",
+            "    action='{{ route('${1:route}') }}'>",
             "",
             "    @csrf",
-            "    ",
+            "",
             "    ${2}",
             "",
             "</form>",
@@ -45,8 +44,7 @@
             "        id='${1:attribute}' name='${1:attribute}'",
             "        class='form-control {{ !$$errors->has('${1:attribute}') ?: 'is-invalid' }}'",
             "        col='30' row='6'",
-            "        >",
-            "        {{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}",
+            "        >{{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}",
             "    </textarea>",
             "",
             "    <div class='invalid-feedback'>",
@@ -75,6 +73,7 @@
         "description": "Blade bootstrap select input"
     },
 
+<<<<<<< HEAD
     "Bootstrap Nav": {
         "prefix": "bootstrap_nav",
         "body": [
@@ -176,5 +175,31 @@
             "    </div>",
             "</div>",
         ]
+=======
+    "Blade Bootstrap Select Input (Simple)": {
+        "prefix": "bseli",
+        "body": [
+            "<div class='form-group'>",
+            "    <label for='${1:attribute}'> ${2:label}: </label>",
+            "    <select name='${1:attribute}' id='${1:attribute}' class='form-control'>",
+            "        @foreach($${3:var_array} as $${4:var})",
+            "        <option {{ old('${1:attribute}'${7:, $${8:object}->${9:attribute}}) !== $${4:var}->${5:key} ?: 'selected' }} value='{{ $${4:var}->${5:key} }}'> {{ $${4:var}->${5:value} }} </option>",
+            "        @endforeach",
+            "    </select>",
+            "    <div class='invalid-feedback'>",
+            "        {{ $$errors->first('${1:attribute}') }}",
+            "    </div>",
+            "</div>",
+        ],
+        "description": "Blade bootstrap select input"
+    },
+
+    "Meta Tag CSRF Blade": {
+        "prefix": "metacsrf",
+        "body": [
+            "<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">"
+        ],
+        "description": "Meta Tag CSRF Blade"
+>>>>>>> 863848e598dedae7a318df735bfe1ccadb896e78
     }
 }
