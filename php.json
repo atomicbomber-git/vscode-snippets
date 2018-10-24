@@ -57,6 +57,11 @@
         "body": "use Illuminate\\Support\\Collection;"
     },
 
+    "Use Schema Facade": {
+        "prefix": "use_schema_facade",
+        "body": "use Illuminate\\Support\\Facades\\Schema;"
+    },
+
     "DB::transaction()": {
         "prefix": "db_transaction",
         "body": [
@@ -67,10 +72,19 @@
     },
 
      "MySQL Schema Fix": {
-        "prefix": "myschema",
+        "prefix": "mysqlfix",
         "body": [
             "Schema::defaultStringLength(191);"
         ],
         "description": "MySQL Schema Fix"
+    },
+
+    "Laravel Route Group": {
+        "prefix": "route_group",
+        "body": [
+            "Route::group(['prefix' => '/${1:name}', 'as' => '${1:name}.'], function() {",
+                "${4}",
+            "});",
+        ]
     }
 }

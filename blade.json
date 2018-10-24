@@ -248,6 +248,18 @@
         "description": "Blade bootstrap select input"
     },
 
+    "Bootstrap Navbar Nav Item": {
+        "prefix": "bootstrap_nav_item",
+        "body": [
+            "<li class='nav-item {{ Route::is('${1:name_prefix}.*') ? 'active' : '' }}'>",
+            "    <a class='nav-link' href='{{ route('${1:name_prefix}.${2:name}') }}'>",
+            "        <i class='fa fa-${3:icon}'></i>",
+            "        ${4:caption}",
+            "    </a>",
+            "</li>",
+        ]
+    },
+
     "Meta Tag CSRF Blade": {
         "prefix": "metacsrf",
         "body": [
