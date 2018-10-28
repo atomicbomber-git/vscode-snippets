@@ -86,5 +86,12 @@
                 "${4}",
             "});",
         ]
+    },
+
+    "Laravel Route": {
+        "prefix": "route",
+        "body": [
+            "Route::${1:method}('/${2:url}/${1:method}', '${3:Controller}@${1:method}')->name('${1:method}');"
+        ]
     }
 }

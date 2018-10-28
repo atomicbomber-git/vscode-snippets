@@ -99,10 +99,11 @@
         "body": [
             "<div class=\"card\">",
             "    <div class=\"card-header\">",
-            "        <i class=\"fa fa-list\"></i>",
-            "        {$1:TITLE}",
+            "        <i class=\"fa fa-${2:icon}\"></i>",
+            "        ${1:title}",
             "    </div>",
             "    <div class=\"card-body\">",
+            "       ${3:content}",
             "    </div>",
             "</div>",
         ]
@@ -113,7 +114,7 @@
         "body": [
             "<nav class=\"navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light\">",
             "    <div class=\"container\">",
-            "        <a class=\"navbar-brand\" href=\"#\"> Aplikasi Balanced Scorecard </a>",
+            "        <a class=\"navbar-brand\" href=\"#\"> ${1:App Title Or Whatever} </a>",
             "        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">",
             "            <span class=\"navbar-toggler-icon\"></span>",
             "        </button>",
@@ -143,11 +144,12 @@
         "prefix": "scaffold",
         "body": [
             "@extends('shared.layout')",
-            "@section('title', '${1:document_title}')",
+            "@section('title', '${1:title}')",
             "@section('content')",
-            "<div class=\"container mt-5\">",
-            "    <h1>",
-            "        ${2:page_title}",
+            "<div class=\"container my-5\">",
+            "    <h1 class='mb-5'>",
+            "        <i class='fa fa-${2:icon}'></i>",
+            "        ${1:title}",
             "    </h1>",
             "</div>",
             "@endsection",
@@ -266,5 +268,22 @@
             "<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">"
         ],
         "description": "Meta Tag CSRF Blade"
+    },
+
+    "Nav Dropdown Item": {
+        "prefix": "nav-dropdown-item",
+        "body": [
+            "<li class='nav-item dropdown {{ Route::is('${1:name}.*') ? 'active' : '' }}'>",
+            "    <a",
+            "        class='nav-link dropdown-toggle' href='#' id='${1:name}' role='button'",
+            "        data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>",
+            "        <i class='fa fa-${3:icon}'></i>",
+            "        ${2:Title}",
+            "    </a>",
+            "    <div class='dropdown-menu' aria-labelledby='${1:name}'>",
+            "        <a class='dropdown-item' href='#'> ${4:Item 1} </a>",
+            "    </div>",
+            "</li>",
+        ]
     }
 }
