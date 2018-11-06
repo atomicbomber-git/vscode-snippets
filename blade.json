@@ -7,6 +7,7 @@
             "",
             "    <input",
             "        id='${1:attribute}' name='${1:attribute}' type='${3|text,number,password,date,phone|}'",
+            "        placeholder='${2:label}'",
             "        value='{{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}'",
             "        class='form-control {{ !$$errors->has('${1:attribute}') ?: 'is-invalid' }}'>",
             "",
@@ -284,6 +285,55 @@
             "        <a class='dropdown-item' href='#'> ${4:Item 1} </a>",
             "    </div>",
             "</li>",
+        ]
+    },
+
+    "Bootstrap Form Button Delete": {
+        "prefix": "bs-form-btn-delete",
+        "body": [
+            "<form action='${2:route}' method='POST' class='d-inline-block'>",
+            "    @csrf",
+            "    <button type='submit' class='btn btn-danger btn-sm'>",
+            "        ${1:Caption}",
+            "        <i class='fa fa-trash'></i>",
+            "    </button>",
+            "</form>",
+        ]
+    },
+
+    "Bootstrap Table": {
+        "prefix": "bs-table",
+        "body": [
+            "<div class='table-responsive'>",
+            "    <table class='table table-sm table-bordered'>",
+            "       <thead>",
+            "            <tr>",
+            "                ${2}",
+            "            </tr>",
+            "       </thead>",
+            "       <tbody>",
+            "           @foreach ($${1:item}s as $${1:item})",
+            "            <tr>",
+            "            </tr>",
+            "           @endforeach",
+            "       </tbody>",
+            "    </table>",
+            "</div>",
+        ]
+    },
+
+    "Bootstrap Image Card": {
+        "prefix": "bs-image-card",
+        "body": [
+            "<div class='card' style='width: 18rem;'>",
+            "    <img class='card-img-top' src='${1:source}' alt='${2:Alt Text}'>",
+            "    <div class='card-body'>",
+            "        <h5 class='card-title'> ${3:Card Title} </h5>",
+            "        <p class='card-text'>",
+            "            ${4:Slide Content}",
+            "        </p>",
+            "    </div>",
+            "</div>",
         ]
     }
 }

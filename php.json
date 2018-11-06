@@ -93,5 +93,28 @@
         "body": [
             "Route::${1:method}('/${2:url}/${1:method}', '${3:Controller}@${1:method}')->name('${1:method}');"
         ]
+    },
+
+    "Laravel Return Back": {
+        "prefix": "lv-return-back",
+        "body": [
+            "return back()",
+            "    ->with('${1:session_key}', __('${2:translation_key}'));",
+        ]
+    },
+
+    "Laravel Media Library Model Uses": {
+        "prefix": "lml-use",
+        "body": [
+            "use Spatie\\MediaLibrary\\HasMedia\\HasMedia;",
+            "use Spatie\\MediaLibrary\\HasMedia\\HasMediaTrait;",
+        ]
+    },
+
+    "Laravel Media Library Model Trait": {
+        "prefix": "lml-trait",
+        "body": [
+            "use HasMediaTrait;",
+        ]
     }
 }
