@@ -335,5 +335,10 @@
             "    </div>",
             "</div>",
         ]
+    },
+
+    "Route": {
+        "prefix": "octicon",
+        "body": "<span class='octicon-container octicon' data-octicon-type='${1:icon_type}'></span>"
     }
 }

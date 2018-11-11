@@ -116,5 +116,17 @@
         "body": [
             "use HasMediaTrait;",
         ]
+    },
+
+    "PHP Public Function": {
+        "prefix": "pbf",
+        "body": [
+            "public function ${1:function_name}()",
+            "{",
+            "    ${2:function_body};",
+            "}",
+            "",
+            "${3:}",
+        ]
     }
 }
