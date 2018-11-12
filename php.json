@@ -88,6 +88,20 @@
         ]
     },
 
+    "Laravel CRUD Route Group": {
+        "prefix": "crud_route_group",
+        "body": [
+            "Route::group(['prefix' => '/${1:name}', 'as' => '${1:name}.'], function() {",
+            "    Route::get('/index', '${2:Name}Controller@index')->name('index');",
+            "    Route::get('/create', '${2:Name}Controller@create')->name('create');",
+            "    Route::post('/store', '${2:Name}Controller@store')->name('store');",
+            "    Route::get('/edit/{${1:name}}', '${2:Name}Controller@edit')->name('edit');",
+            "    Route::post('/update/{${1:name}}', '${2:Name}Controller@update')->name('update');",
+            "    Route::post('/delete/{${1:name}}', '${2:Name}Controller@delete')->name('delete');",
+            "});",
+        ]
+    },
+
     "Laravel Route": {
         "prefix": "route",
         "body": [
