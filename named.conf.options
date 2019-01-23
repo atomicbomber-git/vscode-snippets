@@ -1,0 +1,22 @@
+acl goodclients {
+    36.82.177.125;
+};
+
+options {
+	directory "/var/cache/bind";
+
+    recursion yes;
+    allow-query { goodclients; };
+
+    forwarders {
+        8.8.8.8;
+        8.8.4.4;
+    }
+    forward only;
+    
+    dnssec-validation yes;
+    dnssec-validation yes;
+    auth-nxdomain no;
+    listen-on-v6 { any; };
+};
+
