@@ -1,0 +1,13 @@
+{
+    "VS Code Snippet": {
+        "prefix": "vscode-snippet",
+        "body": [
+            "\"${1:Snippet Name}\": {",
+            "    \"prefix\": \"${2:snippet-prefix}\",",
+            "    \"body\": [",
+            "        \"${3:snippet-body}\",",
+            "    ]",
+            "},",
+        ]
+    },
+}
