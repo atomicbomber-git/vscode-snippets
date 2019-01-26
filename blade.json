@@ -22,10 +22,7 @@
     "Blade Bootstrap Form": {
         "prefix": "bform",
         "body": [
-            "<form",
-            "    method='POST'",
-            "    action='{{ route('${1:route}') }}'>",
-            "",
+            "<form method='POST' action='{{ route('${1:route}') }}'>",
             "    @csrf",
             "",
             "    ${2}",
