@@ -32,6 +32,17 @@
         "description": "Blade bootstrap form"
     },
 
+    "Bootstrap Submit Button": {
+        "prefix": "bsubmit",
+        "body": [
+            "<div class=\"mt-3 text-right\">",
+            "    <button class=\"btn btn-primary\">",
+            "        ${1:Submit}",
+            "    </button>",
+            "</div>",
+        ]
+    },
+
     "Blade Bootstrap Textarea": {
         "prefix": "btext",
         "body": [
