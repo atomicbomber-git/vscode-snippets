@@ -154,5 +154,19 @@
       "",
       "${3:}"
     ]
-  }
+  },
+
+  "PHP Class": {
+      "prefix": "scaffc",
+      "body": [
+        "namespace ${1:JamesPatrickKeegan}\\\\${2:SubNamespace};",
+        "",
+        "class ${3:Class} {",
+        "    public function doSomething()",
+        "    {",
+        "        echo \"Hello world!\\n\";",
+        "    }",
+        "}",
+      ]
+  },
 }
