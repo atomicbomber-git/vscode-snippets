@@ -116,6 +116,14 @@
     ]
   },
 
+  "Laravel Controller Redirect Back": {
+      "prefix": "crb",
+      "body": [
+          "return back()",
+          "    ->with('${1:session_key}', __('${2:lang_key}'));",
+      ]
+  },
+
   "Laravel Route": {
     "prefix": "route",
     "body": [
