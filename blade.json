@@ -19,6 +19,28 @@
         "description": "Blade bootstrap input form group"
     },
 
+    "Blade Bootstrap Input Form Group (for Custom Template based on Bootstrap 4.0.0-alpha2)": {
+        "prefix": "cbinput",
+        "body": [
+            "<fieldset class='form-group'>",
+            "    <label for='${1:attribute}'> ${2:label}: </label>",
+            "",
+            "    <input",
+            "        id='${1:attribute}' name='${1:attribute}' type='${3|text,number,password,date,phone|}'",
+            "        placeholder='${2:label}'",
+            "        value='{{ old('${1:attribute}'${4:, $${5:object}->${1:attribute}}) }}'",
+            "        class='form-control {{ $$errors->has('${1:attribute}') ? 'error' : '' }}'>",
+            "",
+            "    @if($$errors->first('${1:attribute}'))",
+            "    <label class='error'>",
+            "        {{ $$errors->first('${1:attribute}') }}",
+            "    </label>",
+            "    @endif",
+            "</fieldset>"
+        ],
+        "description": "Blade bootstrap input form group"
+    },
+
     "Blade Bootstrap Form": {
         "prefix": "bform",
         "body": [
