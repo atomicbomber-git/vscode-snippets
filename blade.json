@@ -41,6 +41,22 @@
         "description": "Blade bootstrap input form group"
     },
 
+    "Blade Bootstrap Page Scaffolding": {
+        "prefix": "cbscaffold",
+        "body": [
+            "@extends('shared.layout')",
+            "@section('title', '${1:page_title}')",
+            "@section('page_name', '${1:page_title}')",
+            "@section('content')",
+            "<div class=\"card\">",
+            "    <div class=\"card-block\">",
+            "        ${2}",
+            "    </div>",
+            "</div>",
+            "@endsection",
+        ]
+    },
+
     "Blade Bootstrap Form": {
         "prefix": "bform",
         "body": [
