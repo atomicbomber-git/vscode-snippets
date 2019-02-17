@@ -231,7 +231,7 @@
     "Bulma Card": {
         "prefix": "bulmacard",
         "body": [
-            "<div class=\"card is-inline-block\">",
+            "<div class=\"card\">",
             "    <div class=\"card-header\">",
             "        <h1 class=\"card-header-title\">",
             "            <span class=\"icon mr-1\">",
@@ -248,17 +248,31 @@
     },
 
     "Blade Bulma Input": {
-        "prefix": "bbulmainput",
+        "prefix": "bulmainput",
         "body": [
             "<div class=\"field\">",
             "    <label for=\"${1:field}\" class=\"label\"> ${2:label}: </label>",
-            "    <input value=\"{{ old('${1:field}') }}\" type=\"text\" name=\"${1:field}\" class=\"input {{ $$errors->first(\"${1:field}\", \"is-danger\") }}\">",
+            "    <input placeholder=\"${2:label}\" value=\"{{ old('${1:field}') }}\" type=\"text\" name=\"${1:field}\" class=\"input {{ $$errors->first(\"${1:field}\", \"is-danger\") }}\">",
             "    @if($$errors->has(\"${1:field}\"))",
             "    <p class=\"help is-danger\"> {{ $$errors->first(\"${1:field}\") }} </p>",
             "    @endif",
             "</div>"
         ],
         "description": "Blade Bulma Input"
+    },
+
+    "Blade Bulma Button with Icon": {
+        "prefix": "bulmabuttonicon",
+        "body": [
+            "<button class=\"button is-${1:primary}\">",
+            "    <span>",
+            "        ${2:Text}",
+            "    </span>",
+            "    <span class=\"icon is-small\">",
+            "        <i class=\"fa fa-${3:icon}\"></i>",
+            "    </span>",
+            "</button>",
+        ]
     },
 
     "Blade Bulma Select": {
@@ -386,5 +400,14 @@
     "Route": {
         "prefix": "octicon",
         "body": "<span class='octicon-container octicon' data-octicon-type='${1:icon_type}'></span>"
-    }
+    },
+
+    "Bulma Font Awesome Icon": {
+        "prefix": "bfaicon",
+        "body": [
+            "<span class=\"icon\">",
+            "    <i class=\"fa fa-${1:icon}\"></i>",
+            "</span>",
+        ]
+    },
 }

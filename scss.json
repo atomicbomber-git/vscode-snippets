@@ -1,0 +1,32 @@
+{
+    "SCSS Import Bulma from Node Modules": {
+        "prefix": "import-bulma",
+        "body": [
+            "// Bulma",
+            "@import '~bulma/css/bulma.css';",
+        ]
+    },
+
+    "SCSS Import Font Awesome from Node Modules": {
+        "prefix": "import-font-awesome",
+        "body": [
+            "// Font Awesome",
+            "@import '~font-awesome/css/font-awesome.css';",
+        ]
+    },
+
+    "SCSS Margin and Padding Helpers": {
+        "prefix": "mp-helpers",
+        "body": [
+            "@each $$side, $$shorthand in (top, t), (right, r), (bottom, b), (left, l) {",
+            "    @each $$attribute, $$short in (margin, m), (padding, p) {",
+            "        @for $$i from 1 to 12 {",
+            "            .#{$$short}#{$$shorthand}-#{$$i} {",
+            "                #{$$attribute}-#{$$side}: #{$$i * 0.2}rem;",
+            "            }",
+            "        }",
+            "    }",
+            "}",
+        ]
+    },
+}
