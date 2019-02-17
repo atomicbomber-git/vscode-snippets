@@ -228,14 +228,27 @@
         "body": "{{ $$loop->iteration }}."
     },
 
+    "Bulma Scaffold": {
+        "prefix": "bulmascaffold",
+        "body": [
+            "@extends('shared.layout')",
+            "@section('title', '${1:Page Title}')",
+            "@section('content')",
+            "",
+            "<div class=\"container mt-5\" style=\"width: 30%; margin-left: auto; margin-right: auto\">",
+            "    ${2}",
+            "</div>",
+        ]
+    },
+
     "Bulma Card": {
-        "prefix": "bulmacard",
+        "prefix": "bulma-card",
         "body": [
             "<div class=\"card\">",
             "    <div class=\"card-header\">",
             "        <h1 class=\"card-header-title\">",
-            "            <span class=\"icon mr-1\">",
-            "                <i class=\"fa fa-plus\"></i>",
+            "            <span class=\"icon\">",
+            "                <i class=\"fa ${2:icon}\"></i>",
             "            </span>",
             "            ${1:Title}",
             "        </h1>",
@@ -247,8 +260,22 @@
         ]
     },
 
+    "Bulma Navbar Item": {
+        "prefix": "bulma-navbar-item",
+        "body": [
+            "<a class=\"navbar-item\">",
+            "    <span class=\"icon\">",
+            "        <i class=\"fa fa-${1:icon}\"></i>",
+            "    </span>",
+            "    <span>",
+            "        ${2:title}",
+            "    </span>",
+            "</a>",
+        ]
+    },
+
     "Blade Bulma Input": {
-        "prefix": "bulmainput",
+        "prefix": "bulma-form-input",
         "body": [
             "<div class=\"field\">",
             "    <label for=\"${1:field}\" class=\"label\"> ${2:label}: </label>",
@@ -259,6 +286,63 @@
             "</div>"
         ],
         "description": "Blade Bulma Input"
+    },
+
+    "Bulma Navbar": {
+        "prefix": "bulma-navbar",
+        "body": [
+            "<nav class=\"navbar has-shadow is-spaced\" role=\"navigation\" aria-label=\"main navigation\">",
+            "    <div class=\"container\">",
+            "        <div class=\"navbar-brand\">",
+            "            <a role=\"button\" class=\"navbar-burger burger\" aria-label=\"menu\" aria-expanded=\"false\" data-target=\"navbarBasicExample\">",
+            "                <span aria-hidden=\"true\"></span>",
+            "                <span aria-hidden=\"true\"></span>",
+            "                <span aria-hidden=\"true\"></span>",
+            "            </a>",
+            "        </div>",
+            "        ",
+            "        <div id=\"navbarBasicExample\" class=\"navbar-menu\">",
+            "            <div class=\"navbar-start\">",
+            "                ",
+            "            </div>",
+            "            ",
+            "            <div class=\"navbar-end\">",
+            "                <div class=\"navbar-item\">",
+            "                    <div class=\"buttons\">",
+            "                    </div>",
+            "                </div>",
+            "            </div>",
+            "        </div>",
+            "    </div>",
+            "</nav>",
+        ]
+    },
+
+    "Bulma Navbar Dropdown Item": {
+        "prefix": "bulma-dropdown-item",
+        "body": [
+            "<div class=\"navbar-item has-dropdown is-hoverable\">",
+            "    <a class=\"navbar-link\">",
+            "        More",
+            "    </a>",
+            "    ",
+            "    <div class=\"navbar-dropdown\">",
+            "        <a class=\"navbar-item\">",
+            "            About",
+            "        </a>",
+            "        <a class=\"navbar-item\">",
+            "            Jobs",
+            "        </a>",
+            "        <a class=\"navbar-item\">",
+            "            Contact",
+            "        </a>",
+            "        <hr class=\"navbar-divider\">",
+            "        <a class=\"navbar-item\">",
+            "            Report an issue",
+            "        </a>",
+            "    </div>",
+            "</div>",
+        ]
     },
 
     "Blade Bulma Button with Icon": {
