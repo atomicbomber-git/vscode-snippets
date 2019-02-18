@@ -254,6 +254,26 @@
         ]
     },
 
+    "Bulma Table": {
+        "prefix": "bulma-table",
+        "body": [
+            "<div style=\"overflow-x:auto\">",
+            "    <table class=\"table is-bordered is-striped is-narrow is-hoverable block\">",
+            "        <thead>",
+            "            <th> # </th>",
+            "        </thead>",
+            "        <tbody>",
+            "            @foreach ($${1:items} as $${2:item})",
+            "            <tr>",
+            "                <td> {{ $${1:items}->firstItem() + $$loop->index }}. </td>",
+            "            </tr>",
+            "            @endforeach",
+            "        </tbody>",
+            "    </table>",
+            "</div>",
+        ]
+    },
+
     "Bulma Link Button": {
         "prefix": "bulma-link-button",
         "body": [
