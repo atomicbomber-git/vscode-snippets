@@ -300,6 +300,17 @@
         ]
     },
 
+    "Bulma Headerless Message": {
+        "prefix": "bulma-headerless-message",
+        "body": [
+            "<article class=\"message is-primary\">",
+            "    <div class=\"message-body\">",
+            "        ${1:Content}",
+            "    </div>",
+            "</article>",
+        ]
+    },
+
     "Bulma Navbar": {
         "prefix": "bulma-navbar",
         "body": [
