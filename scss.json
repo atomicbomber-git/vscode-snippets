@@ -15,6 +15,14 @@
         ]
     },
 
+    "SCSS Import Shed-CSS": {
+        "prefix": "import-shedcss",
+        "body": [
+            "// Shed CSS",
+            "@import '~shed-css/dist/index.css';",
+        ]
+    },
+
     "SCSS Margin and Padding Helpers": {
         "prefix": "mp-helpers",
         "body": [
