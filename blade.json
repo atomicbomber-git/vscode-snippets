@@ -18,6 +18,24 @@
         ]
     },
 
+    "Milestone Bootstrap Textarea Input": {
+        "prefix": "milestone-textarea",
+        "body": [
+            "<fieldset class='form-group'>",
+            "    <label for='${1:field}'> ${2:label}: </label>",
+            "    <textarea",
+            "        id='${1:field}' name='${1:field}' type='text'",
+            "        placeholder='${2:label}'",
+            "        class='form-control {{ $$errors->has('${1:field}') ? 'error' : '' }}'>{{ old('${1:field}'${3: ,$$object->${1:field}}) }}</textarea>",
+            "    @if($$errors->first('${1:field}'))",
+            "    <label class='error'>",
+            "        {{ $errors->first('${1:field}') }}",
+            "    </label>",
+            "    @endif",
+            "</fieldset>",
+        ]
+    },
+
     "Blade Bootstrap Input Form Group": {
         "prefix": "binput",
         "body": [
