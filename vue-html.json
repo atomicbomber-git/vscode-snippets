@@ -1,4 +1,85 @@
 {
+    "Bulma Input": {
+        "prefix": "bulma-input",
+        "body": [
+            "<div class=\"field\">",
+            "    <label for=\"${1:field}\" class=\"label\"> ${2:label}: </label>",
+            "    <div class=\"control\">",
+            "        <input placeholder=\"${2:label}\" :value=\"${1:field}\" type=\"${3:text}\" name=\"${1:field}\"",
+            "             class=\"input\"",
+            "             :class=\"{'is-error': get(this.error_data, 'errors.field[0]', false)}\"",
+            "            />",
+            "    </div>",
+            "    <p v-if=\"get(this.error_data, 'errors.${1:field}[0]', false)\" class=\"help is-danger\">",
+            "        {{ get(this.error_data, 'errors.${1:field}[0]', false) }}",
+            "    </p>",
+            "</div>",
+        ]
+    },
+
+    "Bulma Card": {
+        "prefix": "bulma-card",
+        "body": [
+            "<div class=\"card\">",
+            "    <div class=\"card-header\">",
+            "        <h1 class=\"card-header-title\">",
+            "            <span class=\"icon\">",
+            "                <i class=\"fa fa-${2:icon}\"></i>",
+            "            </span>",
+            "            ${1:Card Title}",
+            "        </h1>",
+            "    </div>",
+            "    <div class=\"card-content\">",
+            "       ${3:Card Content}",
+            "    </div>",
+            "</div>",
+        ]
+    },
+
+    "Bulma Navbar Item": {
+        "prefix": "bulma-navbar-item",
+        "body": [
+            "<a class=\"navbar-item\">",
+            "    <span class=\"icon\">",
+            "        <i class=\"fa fa-${1:icon}\"></i>",
+            "    </span>",
+            "    <span>",
+            "        ${2:content}",
+            "    </span>",
+            "</a>",
+        ]
+    },
+
+    "Bulma Navbar": {
+        "prefix": "bulma-navbar",
+        "body": [
+            "<nav class=\"navbar has-shadow is-spaced\" role=\"navigation\" aria-label=\"main navigation\">",
+            "    <div class=\"container\">",
+            "        <div class=\"navbar-brand\">",
+            "            <a role=\"button\" class=\"navbar-burger burger\" aria-label=\"menu\" aria-expanded=\"false\" data-target=\"navbar\">",
+            "                <span aria-hidden=\"true\"></span>",
+            "                <span aria-hidden=\"true\"></span>",
+            "                <span aria-hidden=\"true\"></span>",
+            "            </a>",
+            "        </div>",
+            "        ",
+            "        <div id=\"navbar\" class=\"navbar-menu\">",
+            "            <div class=\"navbar-start\">",
+            "                ",
+            "            </div>",
+            "            ",
+            "            <div class=\"navbar-end\">",
+            "                <div class=\"navbar-item\">",
+            "                    <div class=\"buttons\">",
+            "                    </div>",
+            "                </div>",
+            "            </div>",
+            "        </div>",
+            "    </div>",
+            "</nav>",
+        ]
+    },
+
     "Bootstrap Form Group Input": {
         "prefix": "vue-bs-input",
         "body": [

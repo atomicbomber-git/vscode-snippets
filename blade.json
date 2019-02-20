@@ -1,4 +1,23 @@
 {
+    "Milestone Bootstrap Select Input": {
+        "prefix": "milestone-select",
+        "body": [
+            "<fieldset class='form-group'>",
+            "    <label for='${1:attribute}'> ${2:label}: </label>",
+            "    <select name='${1:attribute}' id='${1:attribute}' class='form-control'>",
+            "        @foreach(${3:array} as $${4:key} => $${5:value})",
+            "        <option {{ old('${1:attribute}') == $${4:key} ? 'selected' : '' }} value='{{ $${4:key} }}'> {{ $${5:value} }} </option>",
+            "        @endforeach",
+            "    </select>",
+            "    @if($$errors->first('${1:attribute}'))",
+            "    <label class='error'>",
+            "        {{ $$errors->first('${1:attribute}') }}",
+            "    </label>",
+            "    @endif",
+            "</fieldset>",
+        ]
+    },
+
     "Blade Bootstrap Input Form Group": {
         "prefix": "binput",
         "body": [
@@ -321,18 +340,20 @@
         ]
     },
 
-    "Blade Bulma Input": {
+    "Bulma Input": {
         "prefix": "bulma-form-input",
         "body": [
             "<div class=\"field\">",
             "    <label for=\"${1:field}\" class=\"label\"> ${2:label}: </label>",
-            "    <input placeholder=\"${2:label}\" value=\"{{ old('${1:field}') }}\" type=\"text\" name=\"${1:field}\" class=\"input {{ $$errors->first(\"${1:field}\", \"is-danger\") }}\">",
+            "    <div class=\"control\">",
+            "        <input placeholder=\"${2:label}\" value=\"{{ old('${1:field}') }}\" type=\"text\" name=\"${1:field}\" class=\"input {{ $$errors->first(\"${1:field}\", \"is-danger\") }}\">",
+            "    </div>",
             "    @if($$errors->has(\"${1:field}\"))",
             "    <p class=\"help is-danger\"> {{ $$errors->first(\"${1:field}\") }} </p>",
             "    @endif",
             "</div>"
         ],
-        "description": "Blade Bulma Input"
+        "description": "Bulma Input"
     },
 
     "Bulma Breadcrumbs": {
