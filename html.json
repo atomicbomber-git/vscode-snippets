@@ -1,0 +1,15 @@
+{
+	"PHP Echo Tags": {
+		"prefix": "phe",
+		"body": [
+			"<?= ${1} ?>",
+		]
+	},
+  
+	"PHP Tags": {
+		"prefix": "pht",
+		"body": [
+			"<?php ${1} ?>",
+		]
+	},
+}

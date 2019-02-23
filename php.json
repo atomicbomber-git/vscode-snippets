@@ -1,10 +1,29 @@
 {
+  "CI Custom Controller": {
+      "prefix": "ci-custom-controller",
+      "body": [
+          "use Custom\\BaseController;",
+          "",
+          "class ${1:Class} extends BaseController {",
+          "    ${2}",
+          "}",
+      ]
+  },
+
+
   "Laravel Query Builder Inner Join": {
     "prefix": "qjoin",
     "body": [
       "->join('${1:first_table}', '${1:first_table}.${2:first_attr}', '=', '${3:second_table}.${4:second_attr}')"
     ],
     "description": "Laravel Query Builder Inner Join"
+  },
+
+  "Use Yajra Datatables": {
+      "prefix": "use-yajra-datatables",
+      "body": [
+          "use Yajra\\Datatables\\Datatables;",
+      ]
   },
 
   "Laravel Query Builder Where": {
@@ -157,10 +176,8 @@
     "body": [
       "public function ${1:function_name}()",
       "{",
-      "    ${2:function_body};",
+      "    ${2:};",
       "}",
-      "",
-      "${3:}"
     ]
   },
 
