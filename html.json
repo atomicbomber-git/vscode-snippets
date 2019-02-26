@@ -1,4 +1,48 @@
 {
+	"PHP Foreach": {
+		"prefix": "php-foreach",
+		"body": [
+			"<?php foreach($${1:records} as $${2:record}): ?>",
+            "    ${3}",
+            "<?php endforeach ?>",
+		]
+	},
+
+	"CI JS Script Import": {
+		"prefix": "ci-script-import",
+		"body": [
+			"<script src=\"<?= base_url('${1:url}') ?>\"></script>",
+		]
+	},
+
+	"CI Milestone Form Input": {
+		"prefix": "ci-milestone-form-input",
+		"body": [
+			"<fieldset class=\"form-group\">",
+            "    <label for=\"${1:field}\">",
+            "        ${2:Label}:",
+            "    </label>",
+            "    <input",
+            "        value=\"<?= $$this->e($$this->old('${1:field}')) ?>\"",
+            "        type=\"text\" name=\"${1:field}\"",
+            "        class=\"form-control <?= $$this->has_error('${1:field}') ? 'error' : '' ?>\"",
+            "        id=\"${1:field}\" placeholder=\"${2:Label}\"/>",
+            "    <?php if ($$this->has_error('${1:field}')): ?>",
+            "    <label for=\"${1:field}\" class=\"error\">",
+            "        <?= $$this->e($$this->error('${1:field}')) ?>",
+            "    </label>",
+            "    <?php endif ?>",
+            "</fieldset>",
+		]
+	},
+
+	"CI CSRF Field": {
+		"prefix": "ci-csrf-field",
+		"body": [
+			"<input type=\"hidden\" name=\"<?= $$this->e($$this->csrf_name()) ?>\" value=\"<?= $$this->e($$this->csrf_token()) ?>\">"
+		]
+	},
+
 	"PHP Echo Tags": {
 		"prefix": "phe",
 		"body": [

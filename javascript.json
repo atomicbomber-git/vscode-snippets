@@ -1,4 +1,19 @@
 {
+    "JQuery Ajax POST Request": {
+        "prefix": "jquery-post-request",
+        "body": [
+            "$.post(this.submit_url, {token: window.token, ...this.final_form})",
+            "    .done(response => {",
+            "        this.error_data = null;",
+            "        window.location.replace(this.redirect_url);",
+            "    })",
+            "    .fail((xhr, status, error) => {",
+            "        let response = JSON.parse(xhr.responseText);",
+            "        this.error_data = response.data;",
+            "    });",
+        ]
+    },
+
     "Axios POST Request": {
         "prefix": "axios_post",
         "body": [
