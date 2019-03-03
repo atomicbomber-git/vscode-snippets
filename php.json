@@ -6,6 +6,20 @@
       ]
   },
 
+  "CI Query Builder RTL Join": {
+      "prefix": "ci-rtl-join",
+      "body": [
+          "->join('${1:right}', '${1:right}.${2:left}_id = ${2:left}s.id')",
+      ]
+  },
+
+  "CI Query Builder LTR Join": {
+      "prefix": "ci-ltr-join",
+      "body": [
+          "->join('${1:right}s', '${1:right}s.id = ${2:left}s.${1:right}_id')",
+      ]
+  },
+
   "CI DB Transaction": {
       "prefix": "ci-db-transaction",
       "body": [
@@ -21,7 +35,12 @@
           "use Custom\\BaseController;",
           "",
           "class ${1:Class} extends BaseController {",
-          "    ${2}",
+          "    protected function allowedMethods()",
+          "    {",
+          "        return [",
+          "            'index' => ['get'],",
+          "        ];",
+          "    }",
           "}",
       ]
   },
@@ -32,6 +51,16 @@
           "$${1:var} = $$this->db->query(\"",
           "    ${2:}",
           "\")->result() ?? null;",
+      ]
+  },
+
+  "Laravel Migration Foreign Key": {
+      "prefix": "laravel-migration-foreign-key",
+      "body": [
+          "$$table->unsignedInteger('${1:field}_id');",
+          "$$table->foreign('${1:field}_id')",
+          "    ->references('id')",
+          "    ->on('${2:ref_table}s');",
       ]
   },
 

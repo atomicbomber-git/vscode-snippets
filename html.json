@@ -1,59 +1,119 @@
 {
-	"PHP Foreach": {
-		"prefix": "php-foreach",
-		"body": [
-			"<?php foreach($${1:records} as $${2:record}): ?>",
-            "    ${3}",
-            "<?php endforeach ?>",
-		]
-	},
+ "CI Plates Scaffold": {
+  "prefix": "ci-plates-scaffold",
+  "body": [
+   "<?php ?>",
+   "",
+   "<?php \\$this->layout('base', ['page_title' => \"${1:Title}\"]) ?>",
+   "<?php \\$this->start('extra-styles') ?>",
+   "    <link rel=\"stylesheet\" href=\"<?= base_url('assets/vendor/datatables/media/css/dataTables.bootstrap4.css') ?>\">",
+   "<?php \\$this->stop() ?>",
+   "",
+   "<ol class=\"breadcrumb\">",
+   "    <li class=\"breadcrumb-item\"><a href=\"<?= base_url(\"\") ?>\"> <?= app_name() ?> </a></li>",
+   "    <li class=\"breadcrumb-item\"><a href=\"<?= base_url(\"\") ?>\"> ${1:Title} </a></li>",
+   "</ol>",
+   "",
+   "",
+   "<?php if (!empty(\\$_SESSION['message-success'])): ?>",
+   "    <div class=\"alert alert-success\">",
+   "        <i class=\"fa fa-check\"></i>",
+   "        <?= \\$this->e(\\$_SESSION['message-success']) ?>",
+   "    </div>",
+   "<?php endif ?>",
+   "",
+   "",
+   "<div class=\"card\">",
+   "    <div class=\"card-block\">",
+   "        <div class=\"table-responsive\">",
+   "            <table class=\"datatable table table-bordered\">",
+   "                <thead>",
+   "                    <tr>",
+   "                        ",
+   "                    </tr>",
+   "                </thead>",
+   "                <tbody>",
+   "                    <?php foreach($${2:item}s as $${2:item}): ?>",
+   "                    ",
+   "                    <?php endforeach ?>",
+   "                </tbody>",
+   "            </table>",
+   "        </div>",
+   "    </div>",
+   "</div>",
+   "",
+   "<?php \\$this->start('extra-scripts') ?>",
+   "    <script src=\"<?= base_url('assets/vendor/datatables/media/js/jquery.dataTables.js') ?>\"></script>",
+   "    <script src=\"<?= base_url('assets/vendor/datatables/media/js/dataTables.bootstrap4.js') ?>\"></script>",
+   "    <script>",
+   "        $('.datatable').DataTable({",
+   "            // Options",
+   "        });",
+   "    </script>",
+   "<?php \\$this->stop() ?>"
+  ]
+ },
 
-	"CI JS Script Import": {
-		"prefix": "ci-script-import",
-		"body": [
-			"<script src=\"<?= base_url('${1:url}') ?>\"></script>",
-		]
-	},
+ "Bootstrap Breadcrumb": {
+  "prefix": "bootstrap-breadcrumb",
+  "body": [
+   "<ol class=\"breadcrumb\">",
+   "    <li class=\"breadcrumb-item\"><a href=\"#\"> ${1:Home} </a></li>",
+   "    <li class=\"breadcrumb-item\"><a href=\"#\"> ${2:Library} </a></li>",
+   "    <li class=\"breadcrumb-item active\"> ${3:Data} </li>",
+   "</ol>"
+  ]
+ },
 
-	"CI Milestone Form Input": {
-		"prefix": "ci-milestone-form-input",
-		"body": [
-			"<fieldset class=\"form-group\">",
-            "    <label for=\"${1:field}\">",
-            "        ${2:Label}:",
-            "    </label>",
-            "    <input",
-            "        value=\"<?= $$this->e($$this->old('${1:field}')) ?>\"",
-            "        type=\"text\" name=\"${1:field}\"",
-            "        class=\"form-control <?= $$this->has_error('${1:field}') ? 'error' : '' ?>\"",
-            "        id=\"${1:field}\" placeholder=\"${2:Label}\"/>",
-            "    <?php if ($$this->has_error('${1:field}')): ?>",
-            "    <label for=\"${1:field}\" class=\"error\">",
-            "        <?= $$this->e($$this->error('${1:field}')) ?>",
-            "    </label>",
-            "    <?php endif ?>",
-            "</fieldset>",
-		]
-	},
+ "PHP Foreach": {
+  "prefix": "php-foreach",
+  "body": [
+   "<?php foreach($${1:records} as $${2:record}): ?>",
+   "    ${3}",
+   "<?php endforeach ?>"
+  ]
+ },
 
-	"CI CSRF Field": {
-		"prefix": "ci-csrf-field",
-		"body": [
-			"<input type=\"hidden\" name=\"<?= $$this->e($$this->csrf_name()) ?>\" value=\"<?= $$this->e($$this->csrf_token()) ?>\">"
-		]
-	},
+ "CI JS Script Import": {
+  "prefix": "ci-script-import",
+  "body": ["<script src=\"<?= base_url('${1:url}') ?>\"></script>"]
+ },
 
-	"PHP Echo Tags": {
-		"prefix": "phe",
-		"body": [
-			"<?= ${1} ?>",
-		]
-	},
-  
-	"PHP Tags": {
-		"prefix": "pht",
-		"body": [
-			"<?php ${1} ?>",
-		]
-	},
+ "CI Milestone Form Input": {
+  "prefix": "ci-milestone-form-input",
+  "body": [
+   "<fieldset class=\"form-group\">",
+   "    <label for=\"${1:field}\">",
+   "        ${2:Label}:",
+   "    </label>",
+   "    <input",
+   "        value=\"<?= $$this->e($$this->old('${1:field}')) ?>\"",
+   "        type=\"text\" name=\"${1:field}\"",
+   "        class=\"form-control <?= $$this->has_error('${1:field}') ? 'error' : '' ?>\"",
+   "        id=\"${1:field}\" placeholder=\"${2:Label}\"/>",
+   "    <?php if ($$this->has_error('${1:field}')): ?>",
+   "    <label for=\"${1:field}\" class=\"error\">",
+   "        <?= $$this->e($$this->error('${1:field}')) ?>",
+   "    </label>",
+   "    <?php endif ?>",
+   "</fieldset>"
+  ]
+ },
+
+ "CI CSRF Field": {
+  "prefix": "ci-csrf-field",
+  "body": [
+   "<input type=\"hidden\" name=\"<?= $$this->e($$this->csrf_name()) ?>\" value=\"<?= $$this->e($$this->csrf_token()) ?>\">"
+  ]
+ },
+
+ "PHP Echo Tags": {
+  "prefix": "phe",
+  "body": ["<?= ${1} ?>"]
+ },
+
+ "PHP Tags": {
+  "prefix": "pht",
+  "body": ["<?php ${1} ?>"]
+ },
 }

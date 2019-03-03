@@ -311,20 +311,6 @@
         ]
     },
 
-    "Bulma Link Button": {
-        "prefix": "bulma-link-button",
-        "body": [
-            "<a class=\"button ${2:button-class}\">",
-            "    <span>",
-            "        ${1:Button Text}",
-            "    </span>",
-            "    <span class=\"icon is-small\">",
-            "        <i class=\"fa fa-${3:button-icon}\"></i>",
-            "    </span>",
-            "</a>",
-        ]
-    },
-
     "Bulma Card": {
         "prefix": "bulma-card",
         "body": [
