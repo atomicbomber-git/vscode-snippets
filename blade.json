@@ -360,6 +360,37 @@
         "description": "Bulma Input"
     },
 
+    "Bulma Textarea": {
+        "prefix": "bulma-form-textarea",
+        "body": [
+            "<div class=\"field\">",
+            "    <label for=\"${1:field}\" class=\"label\"> ${2:label}: </label>",
+            "    <div class=\"control\">",
+            "        <textarea placeholder=\"${2:label}\" type=\"text\" name=\"${1:field}\" class=\"textarea {{ $$errors->first(\"${1:field}\", \"is-danger\") }}\">{{ old('${1:field}') }}</textarea>",
+            "    </div>",
+            "    @if($$errors->has(\"${1:field}\"))",
+            "    <p class=\"help is-danger\"> {{ $$errors->first(\"${1:field}\") }} </p>",
+            "    @endif",
+            "</div>"
+        ],
+        "description": "Bulma Textarea"
+    },
+
+    "Bulma Select": {
+        "prefix": "bulma-form-select",
+        "body": [
+            "<div class=\"field\">",
+            "    <label for=\"${1:field}\" class=\"label\"> ${2:Label}: </label>",
+            "    <div class=\"select\">",
+            "        <select name=\"${1:field}\" id=\"${1:field}\">",
+            "            <option value=\"\"> Ya </option>",
+            "            <option value=\"\"> Tidak </option>",
+            "        </select>",
+            "    </div>",
+            "</div>",
+        ]
+    },
+
     "Bulma Breadcrumbs": {
         "prefix": "bulma-breadcrumbs",
         "body": [

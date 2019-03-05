@@ -183,7 +183,7 @@
       "}",
       "",
       "public function store()",
-      "{   ",
+      "{",
       "}",
       "",
       "public function edit(${1:Class} $${2:var})",
