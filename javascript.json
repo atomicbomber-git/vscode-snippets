@@ -1,4 +1,11 @@
 {
+    "Vue Components Definition": {
+        "prefix": "vue-components",
+        "body": [
+            "components: { ${Component} },",
+        ]
+    },
+
     "Vue Props Definition": {
         "prefix": "vue-props",
         "body": [
