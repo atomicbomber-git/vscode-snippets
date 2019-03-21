@@ -194,7 +194,8 @@
       "{",
       "}",
       "",
-      "public function delete(${1:Class} $${2:var}) {",
+      "public function delete(${1:Class} $${2:var})",
+      "{",
       "}"
     ]
   },

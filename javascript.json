@@ -1,4 +1,13 @@
 {
+    "Vue Props Definition": {
+        "prefix": "vue-props",
+        "body": [
+            "props: [",
+            "    \"submit_url\", \"redirect_url\",",
+            "],",
+        ]
+    },
+
     "JQuery Ajax POST Request": {
         "prefix": "jquery-post-request",
         "body": [
