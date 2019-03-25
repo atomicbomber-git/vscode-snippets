@@ -1,4 +1,11 @@
 {
+ "CI Last Insert ID": {
+     "prefix": "ci-last-insert-id",
+     "body": [
+        "$this->db->insert_id()",
+     ]
+ },
+
   "CI POST Input": {
       "prefix": "ci-post-input",
       "body": [

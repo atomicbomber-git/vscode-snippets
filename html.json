@@ -74,6 +74,15 @@
   ]
  },
 
+ "PHP If": {
+     "prefix": "php-if",
+     "body": [
+        "<?php if(${1:condition}): ?>",
+        "    ${2}",
+        "<?php endif ?>"
+    ]
+ },
+
  "CI JS Script Import": {
   "prefix": "ci-script-import",
   "body": ["<script src=\"<?= base_url('${1:url}') ?>\"></script>"]
