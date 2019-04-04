@@ -1,4 +1,14 @@
 {
+    "Vue Cleave": {
+        "prefix": "vue-cleave",
+        "body": [
+            "<vue-cleave",
+            "    class=\"form-control form-control-sm\"",
+            "    v-model.number=\"${1:model}\"",
+            "    :options=\"{ numeral: true, numeralDecimalMark: ',', delimiter: '.' }\" />",
+        ]
+    },
+
     "Bulma Sidebar": {
         "prefix": "bulma-sidebar",
         "body": [
