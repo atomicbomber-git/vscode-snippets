@@ -43,6 +43,30 @@
         ]
     },
 
+    "Axios Custom Post": {
+        "prefix": "axios-custom-post-request",
+        "body": [
+            "axios.post(this.submit_url, this.form_data)",
+            "   .then(response => {${1}",
+            "        window.location.replace(this.redirect_url)",
+            "   })",
+            "   .catch(error => {",
+            "       this.error_data = error.response.data",
+            "   })",
+        ]
+    },
+
+    "Vue Data": {
+        "prefix": "vue-data",
+        "body": [
+            "data() {",
+            "    return {",
+            "        ${1}",
+            "    }",
+            "},",
+        ]
+    },
+
     "Axios POST Request (Multipart/Form-Data)": {
         "prefix": "axios_post_multipart",
         "body": [

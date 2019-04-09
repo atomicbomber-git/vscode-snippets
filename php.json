@@ -1,14 +1,19 @@
 {
+ "PHP Date Timestamp": {
+  "prefix": "php-timestamp",
+  "body": ["date(\"Y-m-d H:i:s\")"]
+ },
+
  "CI Last Insert ID": {
   "prefix": "ci-last-insert-id",
   "body": ["$this->db->insert_id()"]
  },
 
  "Ci Flash Message": {
-     "prefix": "ci-flash",
-     "body": [
-        "$$this->session->set_flashdata(${1:'message-success'}, '${2:Data berhasil diperbarui.}');",
-     ]
+  "prefix": "ci-flash",
+  "body": [
+   "$$this->session->set_flashdata(${1:'message-success'}, '${2:Data berhasil diperbarui.}');"
+  ]
  },
 
  "CI POST Input": {
@@ -64,7 +69,7 @@
    "$$table->unsignedInteger('${1:field}_id');",
    "$$table->foreign('${1:field}_id')",
    "    ->references('id')",
-   "    ->on('${2:ref_table}s');"
+   "    ->on('${1:field}s');"
   ]
  },
 
@@ -246,6 +251,14 @@
  "PHP Public Function": {
   "prefix": "pbf",
   "body": ["public function ${1:function_name}()", "{", "    ${2:};", "}"]
+ },
+
+ "Laravel Drop Foreign Key": {
+     "prefix": "laravel-drop-foreign-key",
+     "body": [
+        "$$table->dropForeign([\"${1:field}_id\"]);",
+        "$$table->dropColumn(\"${1:field}_id\");",
+     ]
  },
 
  "PHP Class": {

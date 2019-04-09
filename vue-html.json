@@ -9,6 +9,19 @@
         ]
     },
 
+    "Vue Multiselect": {
+        "prefix": "vue-multiselect",
+        "body": [
+            "<multiselect",
+            "        track-by=\"${1:id}\"",
+            "        label=\"${2:label}\"",
+            "        :options=\"${3:item}s\"",
+            "        v-model=\"${3:item}\"",
+            "        :preselect-first=\"true\"",
+            "    />",
+        ]
+    },
+
     "Bulma Sidebar": {
         "prefix": "bulma-sidebar",
         "body": [
