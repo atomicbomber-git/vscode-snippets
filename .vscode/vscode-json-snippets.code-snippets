@@ -1,0 +1,15 @@
+{
+	"VS Code Snippet": {
+        "scope": "json,jsonc",
+        "prefix": "vscode-snippet",
+        "body": [
+            "\"${1:Snippet Name}\": {",
+            "    ${3:\"scope\": \"${2:scope}\",}",
+            "    \"prefix\": \"${4:snippet-prefix}\",",
+            "    \"body\": [",
+            "        \"${5:snippet-body}\",",
+            "    ]",
+            "},",
+        ]
+    },
+}

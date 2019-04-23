@@ -1,4 +1,67 @@
 {
+    "Fomantic UI Breadcrumb": {
+        "prefix": "fui-breadcrumb",
+        "body": [
+            "<div class=\"ui segment\">",
+            "    <div class=\"ui small breadcrumb\">",
+            "        <a class=\"section\">",
+            "            {{ config(\"app.name\") }}",
+            "        </a>",
+            "        <i class=\"right chevron icon divider\"></i>",
+            "        <div class=\"active section\">",
+            "            ${1:Page Name}",
+            "        </div>",
+            "    </div>",
+            "</div>",
+        ]
+    },
+
+    "Fomantic UI Input Field": {
+        "prefix": "fui-input",
+        "body": [
+            "<div class=\"field{{ \\$errors->has(\"${1:field}\") ? \" error\" : \"\" }}\">",
+            "    <label> ${2:Label}: </label>",
+            "    <input name=\"${1:field}\" value=\"{{ old(\"${1:field}\"${4:, \\$${5:object}->${1:field}}) }}\" placeholder=\"${2:Label}\" type=\"${3|text,number,password,date,phone|}\">",
+            "    @error(\"${1:field}\")",
+            "    <div class=\"ui pointing red basic label\">",
+            "        {{ \\$errors->first(\"${1:field}\") }}",
+            "    </div>",
+            "    @enderror",
+            "</div>",
+        ]
+    },
+
+    "Fomantic UI Textarea Field": {
+        "prefix": "fui-textarea",
+        "body": [
+            "<div class=\"field{{ \\$errors->has(\"${1:field}\") ? \" error\" : \"\" }}\">",
+            "    <label> ${2:Label}: </label>",
+            "    <textarea name=\"${1:field}\" col=\"30\" row=\"10\" placeholder=\"${2:Label}\">{{ old(\"${1:field}\"${4:, \\$${5:object}->${1:field}}) }}</textarea>",
+            "    @error(\"${1:field}\")",
+            "    <div class=\"ui pointing red basic label\">",
+            "        {{ \\$errors->first(\"${1:field}\") }}",
+            "    </div>",
+            "    @enderror",
+            "</div>",
+        ]
+    },
+
+    "Fomantic UI POST Form": {
+        "prefix": "fui-post-form",
+        "body": [
+            "<form method=\"POST\" action=\"{{ route(\"${1:route}\") }}\" class=\"ui form\">",
+            "    @csrf",
+            "    ${6}",
+            "   <div class=\"t-a:r\">",
+            "      <button class=\"ui button ${3:primary}\">",
+            "          <i class=\"${4:icon} alternate icon\"></i>",
+            "          ${5:Submit}",
+            "      </button>",
+            "   </div>",
+            "</form>",
+        ]
+    },
+
     "Milestone Bootstrap Select Input": {
         "prefix": "milestone-select",
         "body": [

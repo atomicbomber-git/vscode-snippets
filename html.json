@@ -4,8 +4,8 @@
   "body": [
    "<form method=\"POST\" action=\"<?= base_url(\"${1:path}\") ?>\" >",
    "    <input type=\"hidden\"",
-   "        name=\"<?= $$this->csrf_name() ?>\"",
-   "        value=\"<?= $$this->csrf_token() ?>\">",
+   "        name=\"<?= \\$this->csrf_name() ?>\"",
+   "        value=\"<?= \\$this->csrf_token() ?>\">",
    "    ${2}",
    "</form>"
   ]
@@ -39,6 +39,45 @@
    "</div>"
   ]
  },
+
+ "CI Plates": {
+  "prefix": "ci-plates",
+  "body": [
+   "<?php ?>",
+   "",
+   "<?php \\$this->layout(\"shared/base\", [\"title\" => \"${1:title}\"]) ?>",
+   "",
+   "<div class=\"container\">",
+   "    <div class=\"card\">",
+   "        <div class=\"card-body\">",
+   "            ${2}",
+   "        </div>",
+   "    </div>",
+   "</div>"
+  ]
+ },
+
+"CI Plates Input": {
+    "prefix": "ci-plates-input",
+    "body": [
+        "<div class=\"form-group\">",
+        "    <label for=\"${1:field}\"> ${2:Label}: </label>",
+        "    <input",
+        "        name=\"${1:field}\"",
+        "        id=\"${1:field}\"",
+        "        type=\"text\"",
+        "        class=\"form-control <?= \\$this->has_error(\"${1:field}\") ? \"is-invalid\" : \"\" ?>\"",
+        "        placeholder=\"${2:Label}\"",
+        "        value=\"<?= \\$this->old(\"${1:field}\") ?>\"",
+        "        >",
+        "    <?php if(\\$this->has_error(\"${1:field}\")): ?>",
+        "    <div class=\"invalid-feedback\">",
+        "        <?= \\$this->error(\"${1:field}\") ?>",
+        "    </div>",
+        "    <?php endif ?>",
+        "</div>",
+    ]
+},
 
  "CI Plates Scaffold": {
   "prefix": "ci-plates-scaffold",
@@ -166,11 +205,11 @@
  },
 
  "CI Link Button": {
-     "prefix": "ci-link-button",
-     "body": [
-        "<a href=\"<?= base_url(\"${1:path}\") ?>\" class=\"btn btn-${2:default} btn-sm\">",
-        "    ${3:Caption}",
-        "</a>",
-     ]
- },
+  "prefix": "ci-link-button",
+  "body": [
+   "<a href=\"<?= base_url(\"${1:path}\") ?>\" class=\"btn btn-${2:default} btn-sm\">",
+   "    ${3:Caption}",
+   "</a>"
+  ]
+ }
 }
