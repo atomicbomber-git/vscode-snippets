@@ -57,27 +57,34 @@
   ]
  },
 
-"CI Plates Input": {
-    "prefix": "ci-plates-input",
-    "body": [
-        "<div class=\"form-group\">",
-        "    <label for=\"${1:field}\"> ${2:Label}: </label>",
-        "    <input",
-        "        name=\"${1:field}\"",
-        "        id=\"${1:field}\"",
-        "        type=\"text\"",
-        "        class=\"form-control <?= \\$this->has_error(\"${1:field}\") ? \"is-invalid\" : \"\" ?>\"",
-        "        placeholder=\"${2:Label}\"",
-        "        value=\"<?= \\$this->old(\"${1:field}\") ?>\"",
-        "        >",
-        "    <?php if(\\$this->has_error(\"${1:field}\")): ?>",
-        "    <div class=\"invalid-feedback\">",
-        "        <?= \\$this->error(\"${1:field}\") ?>",
-        "    </div>",
-        "    <?php endif ?>",
-        "</div>",
+ "Plates Insert / Include": {
+  "prefix": "plates-insert",
+  "body": [
+        "<?php \\$this->insert(\"${1:template}\") ?>"
     ]
-},
+ },
+
+ "CI Plates Input": {
+  "prefix": "ci-plates-input",
+  "body": [
+   "<div class=\"form-group\">",
+   "    <label for=\"${1:field}\"> ${2:Label}: </label>",
+   "    <input",
+   "        name=\"${1:field}\"",
+   "        id=\"${1:field}\"",
+   "        type=\"text\"",
+   "        class=\"form-control <?= \\$this->has_error(\"${1:field}\") ? \"is-invalid\" : \"\" ?>\"",
+   "        placeholder=\"${2:Label}\"",
+   "        value=\"<?= \\$this->old(\"${1:field}\") ?>\"",
+   "        >",
+   "    <?php if(\\$this->has_error(\"${1:field}\")): ?>",
+   "    <div class=\"invalid-feedback\">",
+   "        <?= \\$this->error(\"${1:field}\") ?>",
+   "    </div>",
+   "    <?php endif ?>",
+   "</div>"
+  ]
+ },
 
  "CI Plates Scaffold": {
   "prefix": "ci-plates-scaffold",

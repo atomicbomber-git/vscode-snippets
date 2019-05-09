@@ -638,8 +638,8 @@
         "prefix": "bs-table",
         "body": [
             "<div class='table-responsive'>",
-            "    <table class='table table-sm table-bordered'>",
-            "       <thead>",
+            "    <table class='table table-sm table-bordered table-striped'>",
+            "       <thead class='thead thead-dark'>",
             "            <tr>",
             "                ${2}",
             "            </tr>",
