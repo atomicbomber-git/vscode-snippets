@@ -13,12 +13,14 @@
         "prefix": "vue-multiselect",
         "body": [
             "<multiselect",
-            "        track-by=\"${1:id}\"",
-            "        label=\"${2:label}\"",
-            "        :options=\"${3:item}s\"",
-            "        v-model=\"${3:item}\"",
-            "        :preselect-first=\"true\"",
-            "    />",
+            "    selectLabel=\"\"",
+            "    deselectLabel=\"\"",
+            "    track-by=\"${1:id}\"",
+            "    label=\"${2:label}\"",
+            "    :options=\"${3:item}s\"",
+            "    v-model=\"${3:item}\"",
+            "    :preselect-first=\"true\"",
+            "/>",
         ]
     },
 

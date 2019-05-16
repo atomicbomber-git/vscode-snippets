@@ -89,6 +89,15 @@
   ]
  },
 
+ "Eloquent Model Fillable Property": {
+     "prefix": "eloquent-fillable",
+     "body": [
+         "public \\$fillable = [",
+         "    ${1}",
+         "];",
+     ]
+ },
+
  "Laravel Query Builder Inner Join": {
   "prefix": "qjoin",
   "body": [

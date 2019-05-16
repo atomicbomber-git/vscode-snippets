@@ -655,6 +655,16 @@
         ]
     },
 
+    "Pagination Text": {
+        "prefix": "bs-pagination-text",
+        "body": [
+            "<div>",
+            "    Menampilkan hasil ke-{{ \\$${1:items}->firstItem() }} hingga ke-{{ \\$${1:items}->lastItem() }} ",
+            "    dari {{ \\$${1:items}->count() }} hasil yang ada",
+            "</div>",
+        ]
+    },
+
     "Bootstrap Image Card": {
         "prefix": "bs-image-card",
         "body": [
