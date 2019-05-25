@@ -5,14 +5,28 @@
             "<vue-cleave",
             "    class=\"form-control form-control-sm\"",
             "    v-model.number=\"${1:model}\"",
-            "    :options=\"{ numeral: true, numeralDecimalMark: ',', delimiter: '.' }\" />",
+            "    :options=\"{ numeral: true, numeralDecimalMark: ',', delimiter: '.' }\">",
+            "</vue-cleave>"
         ]
     },
+
+    "Bootstrap Form Submit Button": {
+        "prefix": "bs-form-submit-button",
+        "body": [
+           "<div class=\"d-flex justify-content-end\">",
+           "    <button class=\"btn btn-primary\">",
+           "        Tambahkan ${1:Entity} Baru",
+           "    </button>",
+           "</div>",
+        ]
+    },
+   
 
     "Vue Multiselect": {
         "prefix": "vue-multiselect",
         "body": [
             "<multiselect",
+            "    placheholder=\"${4:Placeholder}\"",
             "    selectLabel=\"\"",
             "    deselectLabel=\"\"",
             "    track-by=\"${1:id}\"",
@@ -20,7 +34,7 @@
             "    :options=\"${3:item}s\"",
             "    v-model=\"${3:item}\"",
             "    :preselect-first=\"true\"",
-            "/>",
+            "></multiselect>",
         ]
     },
 

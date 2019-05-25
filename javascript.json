@@ -15,7 +15,50 @@
         ]
     },
 
-    "JQuery Ajax POST Request": {
+    "MomentJS Format": {
+        "prefix": "momentjs-format",
+        "body": [
+            "moment(\"2019-05-16T16:20:00.000Z\").format(\"YYYY-MM-DD HH:mm:ss\")",
+        ]
+    },
+
+    "Import VueMultiselect": {
+        "prefix": "import-vue-multiselect",
+        "body": [
+            "import { Multiselect } from \"vue-multiselect\"",
+        ]
+    },
+
+    "Import VueCleave": {
+        "prefix": "import-vue-cleave",
+        "body": [
+            "import VueCleave from \"vue-cleave-component\"",
+        ]
+    },
+
+    "Cleave.js Indonesian Numeral Input": {
+        "prefix": "cleave-numeral-input",
+        "body": [
+            "var cleave = new Cleave('${1:selector}', {",
+            "    numeral: true,",
+            "    numeralDecimalMark: ',',",
+            "    delimiter: '.'",
+            "})",
+        ]
+    },
+
+    "Vue Data Function": {
+        "prefix": "vue-data",
+        "body": [
+            "data() {",
+            "    return {",
+            "        error_data: null,",
+            "    }",
+            "},",
+        ]
+    },
+
+    "JQuery Vue Ajax POST Request": {
         "prefix": "jquery-post-request",
         "body": [
             "$.post(this.submit_url, {token: window.token, ...this.final_form})",
@@ -24,7 +67,7 @@
             "        window.location.replace(this.redirect_url);",
             "    })",
             "    .fail((xhr, status, error) => {",
-            "        let response = JSON.parse(xhr.responseText);",
+            "        let response = xhr.responseJSON;",
             "        this.error_data = response.data;",
             "    });",
         ]

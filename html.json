@@ -64,6 +64,14 @@
     ]
  },
 
+ "Plates Section": {
+     "prefix": "plates-section",
+     "body": [
+        "<?php $this->start(\"extra-scripts\") ?>",
+        "<?php $this->stop() ?>",
+    ]
+ },
+
  "CI Plates Input": {
   "prefix": "ci-plates-input",
   "body": [
