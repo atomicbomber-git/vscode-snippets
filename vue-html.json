@@ -26,7 +26,7 @@
         "prefix": "vue-multiselect",
         "body": [
             "<multiselect",
-            "    placheholder=\"${4:Placeholder}\"",
+            "    placeholder=\"${4:Placeholder}\"",
             "    selectLabel=\"\"",
             "    deselectLabel=\"\"",
             "    track-by=\"${1:id}\"",
