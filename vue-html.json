@@ -27,6 +27,7 @@
         "body": [
             "<multiselect",
             "    placeholder=\"${4:Placeholder}\"",
+            "    allow-empty=\"false\"",
             "    selectLabel=\"\"",
             "    deselectLabel=\"\"",
             "    track-by=\"${1:id}\"",
