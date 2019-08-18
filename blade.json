@@ -654,6 +654,26 @@
         ]
     },
 
+    "Tailwind Form Textarea": {
+        "prefix": "ttextarea",
+        "body": [
+            "<div class=\"mb-2\">",
+            "    <label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"${1:field}\">",
+            "        ${2:Label}",
+            "    </label>",
+            "    <textarea",
+            "        name=\"${1:field}\"",
+            "        rows=\"10\"",
+            "        type=\"${3:text}\"",
+            "        class=\"shadow appearance-none border {{ $$errors->has(\"${1:field}\") ? \"border-red-500\" : \"\" }} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline\"",
+            "        id=\"${1:field}\" type=\"${1:field}\" placeholder=\"${2:Label}\">{{ old(\"${1:field}\"${4:, $${5:object}->${1:field}})}}</textarea>",
+            "        @if ($$errors->has(\"${1:field}\"))",
+            "            <p class=\"text-red-500 text-xs italic\"> {{ $$errors->first(\"${1:field}\") }} </p>",
+            "        @endif",
+            "</div>",
+        ]
+    },
+
     "Bootstrap Form Button Delete": {
         "prefix": "bs-form-btn-delete",
         "body": [
