@@ -29,6 +29,7 @@
             "    placeholder=\"${4:Placeholder}\"",
             "    :allow-empty=\"false\"",
             "    selectLabel=\"\"",
+            "    selectedLabel=\"\"",
             "    deselectLabel=\"\"",
             "    track-by=\"${1:id}\"",
             "    label=\"${2:label}\"",
