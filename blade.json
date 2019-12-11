@@ -12,10 +12,9 @@
             "            ${1:Page Name}",
             "        </div>",
             "    </div>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Fomantic UI Input Field": {
         "prefix": "fui-input",
         "body": [
@@ -27,10 +26,9 @@
             "        {{ \\$errors->first(\"${1:field}\") }}",
             "    </div>",
             "    @enderror",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Fomantic UI Textarea Field": {
         "prefix": "fui-textarea",
         "body": [
@@ -42,10 +40,9 @@
             "        {{ \\$errors->first(\"${1:field}\") }}",
             "    </div>",
             "    @enderror",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Fomantic UI POST Form": {
         "prefix": "fui-post-form",
         "body": [
@@ -58,10 +55,9 @@
             "          ${5:Submit}",
             "      </button>",
             "   </div>",
-            "</form>",
+            "</form>"
         ]
     },
-
     "Milestone Bootstrap Select Input": {
         "prefix": "milestone-select",
         "body": [
@@ -77,10 +73,9 @@
             "        {{ $$errors->first('${1:attribute}') }}",
             "    </label>",
             "    @endif",
-            "</fieldset>",
+            "</fieldset>"
         ]
     },
-
     "Milestone Bootstrap Textarea Input": {
         "prefix": "milestone-textarea",
         "body": [
@@ -95,10 +90,9 @@
             "        {{ $$errors->first('${1:field}') }}",
             "    </label>",
             "    @endif",
-            "</fieldset>",
+            "</fieldset>"
         ]
     },
-
     "Blade Bootstrap Input Form Group": {
         "prefix": "binput",
         "body": [
@@ -122,7 +116,6 @@
         ],
         "description": "Blade bootstrap input form group"
     },
-
     "Blade Bootstrap Input Form Group (for Custom Template based on Bootstrap 4.0.0-alpha2)": {
         "prefix": "cbinput",
         "body": [
@@ -148,7 +141,6 @@
         ],
         "description": "Blade bootstrap input form group"
     },
-
     "Blade Bootstrap Page Scaffolding": {
         "prefix": "cbscaffold",
         "body": [
@@ -161,10 +153,9 @@
             "        ${2}",
             "    </div>",
             "</div>",
-            "@endsection",
+            "@endsection"
         ]
     },
-
     "Blade Bootstrap Form": {
         "prefix": "bform",
         "body": [
@@ -173,11 +164,10 @@
             "",
             "    ${2}",
             "",
-            "</form>",
+            "</form>"
         ],
         "description": "Blade bootstrap form"
     },
-
     "Bootstrap Submit Button": {
         "prefix": "bsubmit",
         "body": [
@@ -185,10 +175,9 @@
             "    <button class=\"btn btn-primary\">",
             "        ${1:Submit}",
             "    </button>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Blade Bootstrap Textarea": {
         "prefix": "btext",
         "body": [
@@ -213,7 +202,6 @@
         ],
         "description": "Blade bootstrap textarea"
     },
-
     "Blade Bootstrap Select Input": {
         "prefix": "bsele",
         "body": [
@@ -227,11 +215,10 @@
             "    <div class='invalid-feedback'>",
             "        {{ $$errors->first('${1:attribute}') }}",
             "    </div>",
-            "</div>",
+            "</div>"
         ],
         "description": "Blade bootstrap select input"
     },
-
     "Bootstrap Scaffold Ancestor Shared Layout": {
         "prefix": "bootstrap_blade_scaffold_ancestor",
         "body": [
@@ -250,10 +237,9 @@
             "    @yield('content')",
             "    <script src=\"{{ asset('js/app.js') }}\"></script>",
             "</body>",
-            "</html>",
+            "</html>"
         ]
     },
-
     "Bootstrap Card": {
         "prefix": "bootstrap_card",
         "body": [
@@ -265,10 +251,9 @@
             "    <div class=\"card-body\">",
             "       ${3:content}",
             "    </div>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Bootstrap Nav": {
         "prefix": "bootstrap_nav",
         "body": [
@@ -283,10 +268,9 @@
             "            </div>",
             "        </div>",
             "    </div>",
-            "</nav>",
+            "</nav>"
         ]
     },
-
     "Bootstrap Breadcrumb": {
         "prefix": "bootstrap_breadcrumb",
         "body": [
@@ -296,10 +280,9 @@
             "        <li class=\"breadcrumb-item\"><a href=\"#\"> Library </a></li>",
             "        <li class=\"breadcrumb-item active\" aria-current=\"page\"> Data </li>",
             "    </ol>",
-            "</nav>",
+            "</nav>"
         ]
     },
-
     "Scaffold Page": {
         "prefix": "scaffold",
         "body": [
@@ -312,10 +295,9 @@
             "        ${1:title}",
             "    </h1>",
             "</div>",
-            "@endsection",
+            "@endsection"
         ]
     },
-
     "Blade Foreach": {
         "prefix": "bfore",
         "body": [
@@ -325,7 +307,6 @@
         ],
         "description": "Blade Foreach Loop"
     },
-
     "Blade Section": {
         "prefix": "bsect",
         "body": [
@@ -335,12 +316,10 @@
         ],
         "description": "Blade Section"
     },
-
     "Blade Loop Iteration Dot": {
         "prefix": "loop_iter",
         "body": "{{ $$loop->iteration }}."
     },
-
     "Bulma Scaffold": {
         "prefix": "bulma-scaffold",
         "body": [
@@ -363,10 +342,9 @@
             "",
             "    ${2:content}",
             "</div>",
-            "@endsection",
+            "@endsection"
         ]
     },
-
     "Bulma Table": {
         "prefix": "bulma-table",
         "body": [
@@ -383,10 +361,9 @@
             "            @endforeach",
             "        </tbody>",
             "    </table>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Bulma Card": {
         "prefix": "bulma-card",
         "body": [
@@ -402,10 +379,9 @@
             "    <div class=\"card-content\">",
             "    ${1:Body}",
             "    </div>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Bulma Navbar Item": {
         "prefix": "bulma-navbar-item",
         "body": [
@@ -416,10 +392,9 @@
             "    <span>",
             "        ${2:title}",
             "    </span>",
-            "</a>",
+            "</a>"
         ]
     },
-
     "Bulma Input": {
         "prefix": "bulma-form-input",
         "body": [
@@ -435,7 +410,6 @@
         ],
         "description": "Bulma Input"
     },
-
     "Bulma Textarea": {
         "prefix": "bulma-form-textarea",
         "body": [
@@ -451,7 +425,6 @@
         ],
         "description": "Bulma Textarea"
     },
-
     "Bulma Select": {
         "prefix": "bulma-form-select",
         "body": [
@@ -463,10 +436,9 @@
             "            <option value=\"\"> Tidak </option>",
             "        </select>",
             "    </div>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Bulma Breadcrumbs": {
         "prefix": "bulma-breadcrumbs",
         "body": [
@@ -475,10 +447,9 @@
             "        <li> <a href=\"#\"> {{ config('app.name') }} </a> </li>",
             "        <li class=\"is-active\"><a href=\"\" aria-current=\"page\"> ${1:Section Name} </a></li>",
             "    </ul>",
-            "</nav>",
+            "</nav>"
         ]
     },
-
     "Bulma Headerless Message": {
         "prefix": "bulma-headerless-message",
         "body": [
@@ -486,10 +457,9 @@
             "    <div class=\"message-body\">",
             "        ${1:Content}",
             "    </div>",
-            "</article>",
+            "</article>"
         ]
     },
-
     "Bulma Navbar": {
         "prefix": "bulma-navbar",
         "body": [
@@ -516,10 +486,9 @@
             "            </div>",
             "        </div>",
             "    </div>",
-            "</nav>",
+            "</nav>"
         ]
     },
-
     "Bulma Navbar Dropdown Item": {
         "prefix": "bulma-dropdown-item",
         "body": [
@@ -543,10 +512,9 @@
             "            Report an issue",
             "        </a>",
             "    </div>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Blade Bulma Button with Icon": {
         "prefix": "bulmabuttonicon",
         "body": [
@@ -557,10 +525,9 @@
             "    <span class=\"icon is-small\">",
             "        <i class=\"fa fa-${3:icon}\"></i>",
             "    </span>",
-            "</button>",
+            "</button>"
         ]
     },
-
     "Blade Bulma Select": {
         "prefix": "bbselect",
         "body": [
@@ -575,10 +542,9 @@
             "            @endforeach",
             "        </select>",
             "    </div>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Blade Bootstrap Select Input (Simple)": {
         "prefix": "bseli",
         "body": [
@@ -592,11 +558,10 @@
             "    <div class='invalid-feedback'>",
             "        {{ $$errors->first('${1:attribute}') }}",
             "    </div>",
-            "</div>",
+            "</div>"
         ],
         "description": "Blade bootstrap select input"
     },
-
     "Bootstrap Navbar Nav Item": {
         "prefix": "bootstrap_nav_item",
         "body": [
@@ -605,10 +570,9 @@
             "        <i class='fa fa-${3:icon}'></i>",
             "        ${4:caption}",
             "    </a>",
-            "</li>",
+            "</li>"
         ]
     },
-
     "Meta Tag CSRF Blade": {
         "prefix": "metacsrf",
         "body": [
@@ -616,7 +580,6 @@
         ],
         "description": "Meta Tag CSRF Blade"
     },
-
     "Nav Dropdown Item": {
         "prefix": "nav-dropdown-item",
         "body": [
@@ -630,10 +593,9 @@
             "    <div class='dropdown-menu' aria-labelledby='${1:name}'>",
             "        <a class='dropdown-item' href='#'> ${4:Item 1} </a>",
             "    </div>",
-            "</li>",
+            "</li>"
         ]
     },
-
     "Tailwind Form Input": {
         "prefix": "tinput",
         "body": [
@@ -650,10 +612,9 @@
             "        @if ($$errors->has(\"${1:field}\"))",
             "            <p class=\"text-red-500 text-xs italic\"> {{ $$errors->first(\"${1:field}\") }} </p>",
             "        @endif",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Tailwind Form Textarea": {
         "prefix": "ttextarea",
         "body": [
@@ -670,10 +631,9 @@
             "        @if ($$errors->has(\"${1:field}\"))",
             "            <p class=\"text-red-500 text-xs italic\"> {{ $$errors->first(\"${1:field}\") }} </p>",
             "        @endif",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Bootstrap Form Button Delete": {
         "prefix": "bs-form-btn-delete",
         "body": [
@@ -683,10 +643,9 @@
             "        ${1:Caption}",
             "        <i class='fa fa-trash'></i>",
             "    </button>",
-            "</form>",
+            "</form>"
         ]
     },
-
     "Bootstrap Table": {
         "prefix": "bs-table",
         "body": [
@@ -704,20 +663,18 @@
             "           @endforeach",
             "       </tbody>",
             "    </table>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Pagination Text": {
         "prefix": "bs-pagination-text",
         "body": [
             "<div>",
             "    Menampilkan hasil ke-{{ \\$${1:items}->firstItem() }} hingga ke-{{ \\$${1:items}->lastItem() }} ",
             "    dari {{ \\$${1:items}->count() }} hasil yang ada",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Bootstrap Image Card": {
         "prefix": "bs-image-card",
         "body": [
@@ -729,21 +686,19 @@
             "            ${4:Slide Content}",
             "        </p>",
             "    </div>",
-            "</div>",
+            "</div>"
         ]
     },
-
     "Route": {
         "prefix": "octicon",
         "body": "<span class='octicon-container octicon' data-octicon-type='${1:icon_type}'></span>"
     },
-
     "Bulma Font Awesome Icon": {
         "prefix": "bfaicon",
         "body": [
             "<span class=\"icon\">",
             "    <i class=\"fa fa-${1:icon}\"></i>",
-            "</span>",
+            "</span>"
         ]
-    },
+    }
 }

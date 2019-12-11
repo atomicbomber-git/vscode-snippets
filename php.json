@@ -192,6 +192,16 @@
   ]
  },
 
+ "Laravel Create API Token Field On Users Table Migration": {
+     "prefix": "create_api_token",
+     "body": [
+        "$$table->string('api_token', 80)->after('password')",
+        "    ->unique()",
+        "    ->nullable()",
+        "    ->default(null);",
+     ]
+ },
+
  "Laravel CRUD Controller": {
   "prefix": "crud_controller",
   "body": [

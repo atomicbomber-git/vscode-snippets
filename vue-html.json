@@ -5,7 +5,10 @@
             "<vue-cleave",
             "    class=\"form-control form-control-sm\"",
             "    v-model.number=\"${1:model}\"",
-            "    :options=\"{ numeral: true, numeralDecimalMark: ',', delimiter: '.' }\">",
+            "    :options=\"{",
+            "       numeral: true,",
+            "       numeralDecimalScale: 4,",
+            "    }\">",
             "</vue-cleave>"
         ]
     },
