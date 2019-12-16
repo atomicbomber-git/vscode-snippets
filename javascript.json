@@ -22,6 +22,18 @@
         ]
     },
 
+    "Snippet Name": {
+        "prefix": "generate-formdata",
+        "body": [
+            "Object.keys(this.final_form)",
+            "   .forEach(key => {",
+            "       Array.isArray(this.final_form[key]) ?",
+            "           this.final_form[key].forEach(value => formData.append(key + '[]', value)) :",
+            "           formData.append(key, this.final_form[key])",
+            "   })",
+        ]
+    },
+
     "Import VueMultiselect": {
         "prefix": "import-vue-multiselect",
         "body": [
