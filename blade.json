@@ -1,4 +1,19 @@
 {
+    "Envoy Laravel Deployment Scaffolding": {
+        "prefix": "envoy-scaffold",
+        "body": [
+            "@servers(['${1:server_name}' => ['${2:username}@${3:host}']])",
+            "",
+            "@task('deploy', ['on' => '${1:server_name}'])",
+            "    cd ${4:absolute_path_to_project}",
+            "    git pull origin master",
+            "    composer install",
+            "    composer dump-autoload -o",
+            "    php artisan migrate",
+            "@endtask",
+        ]
+    },
+
     "Fomantic UI Breadcrumb": {
         "prefix": "fui-breadcrumb",
         "body": [
