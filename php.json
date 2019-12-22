@@ -1,296 +1,309 @@
 {
- "PHP Date Timestamp": {
-  "prefix": "php-timestamp",
-  "body": ["date(\"Y-m-d H:i:s\")"]
- },
+    "Apply Laravel Controller Auth Middleware": {
+        "prefix": "lcam",
+        "body": [
+            "public function __construct()",
+            "{",
+            "    $$this->middleware(\"auth\");",
+            "}",
+        ]
+    },
 
- "CI Last Insert ID": {
-  "prefix": "ci-last-insert-id",
-  "body": ["$this->db->insert_id()"]
- },
-
- "Ci Flash Message": {
-  "prefix": "ci-flash",
-  "body": [
-   "$$this->session->set_flashdata(${1:'message-success'}, '${2:Data berhasil diperbarui.}');"
-  ]
- },
-
- "CI POST Input": {
-  "prefix": "ci-post-input",
-  "body": ["$$this->input->post('${1:input}')"]
- },
-
- "CI Dump Request Data": {
-  "prefix": "ci-dump-request",
-  "body": ["echo json_encode($$this->input->get_post(null)); exit;"]
- },
-
- "CI Insert to DB": {
-  "prefix": "ci-db-insert",
-  "body": [
-   "$$this->db->insert(\"${1:table}\", [",
-   "    \"${2:key}\" => \"${3:value}\",",
-   "]);"
-  ]
- },
-
- "CI Query Builder RTL Join": {
-  "prefix": "ci-rtl-join",
-  "body": ["->join('${1:right}', '${1:right}.${2:left}_id = ${2:left}s.id')"]
- },
-
- "CI Query Builder LTR Join": {
-  "prefix": "ci-ltr-join",
-  "body": ["->join('${1:right}s', '${1:right}s.id = ${2:left}s.${1:right}_id')"]
- },
-
- "CI DB Transaction": {
-  "prefix": "ci-db-transaction",
-  "body": [
-   "$$this->db->trans_start();",
-   "${1:}",
-   "$$this->db->trans_complete();"
-  ]
- },
-
- "CI DB Query": {
-  "prefix": "ci-db-query",
-  "body": [
-   "$${1:var} = $$this->db->query(\"",
-   "    ${2:}",
-   "\")->result() ?? null;"
-  ]
- },
-
- "Laravel Migration Foreign Key": {
-  "prefix": "laravel-migration-foreign-key",
-  "body": [
-   "$$table->unsignedInteger('${1:field}_id');",
-   "$$table->foreign('${1:field}_id')",
-   "    ->references('id')",
-   "    ->on('${1:field}s');"
-  ]
- },
-
- "Public Static Function": {
-  "prefix": "psf",
-  "body": ["public static function ${1:doSomething}()", "{", "    ;", "}"]
- },
-
- "Laravel Factory with State": {
-  "prefix": "laravel-factory-state",
-  "body": [
-   "$$factory->state(App\\User::class, 'address', function ($$faker) {",
-   "  return [",
-   "      'address' => $$faker->address,",
-   "  ];",
-   "});"
-  ]
- },
-
- "Eloquent Model Fillable Property": {
-     "prefix": "eloquent-fillable",
-     "body": [
-         "public \\$fillable = [",
-         "    ${1}",
-         "];",
-     ]
- },
-
- "Laravel Query Builder Inner Join": {
-  "prefix": "qjoin",
-  "body": [
-   "->join('${1:first_table}', '${1:first_table}.${2:first_attr}', '=', '${3:second_table}.${4:second_attr}')"
-  ],
-  "description": "Laravel Query Builder Inner Join"
- },
-
- "Use Yajra Datatables": {
-  "prefix": "use-yajra-datatables",
-  "body": ["use Yajra\\Datatables\\Datatables;"]
- },
-
- "Laravel Query Builder Where": {
-  "prefix": "qwhere",
-  "body": ["->where('${1:attribute}', $${2:var})"],
-  "description": "Laravel Query Builder Where"
- },
-
- "Laravel Query Builder DB Query": {
-  "prefix": "qdb",
-  "body": [
-   "$${1:var} = DB::table('${2:table_name}')",
-   "    ->select('${3:select_attrs}')${4}",
-   "    ->get();"
-  ],
-  "description": "Laravel Query Builder DB Query"
- },
-
- "Tinker": {
-  "prefix": "tinker",
-  "body": ["eval(\\Psy\\sh());"],
-  "description": "Tinker shortcut"
- },
-
- "Validate Inside Controller": {
-  "prefix": "validate",
-  "body": ["$$data = $$this->validate(request(), [", "    ${1}", "]);"]
- },
-
- "Use Illuminate\\Validation\\Rule": {
-  "prefix": "use_validation_rule",
-  "body": "use Illuminate\\Validation\\Rule;"
- },
-
- "Use DB Facade": {
-  "prefix": "use_DB_facade",
-  "body": "use Illuminate\\Support\\Facades\\DB;"
- },
-
- "Use Collection Facade": {
-  "prefix": "use_collection_facade",
-  "body": "use Illuminate\\Support\\Collection;"
- },
-
- "Use Schema Facade": {
-  "prefix": "use_schema_facade",
-  "body": "use Illuminate\\Support\\Facades\\Schema;"
- },
-
- "DB::transaction()": {
-  "prefix": "db_transaction",
-  "body": ["DB::transaction(function() {", "    ${1}", "});"]
- },
-
- "MySQL Schema Fix": {
-  "prefix": "mysqlfix",
-  "body": ["Schema::defaultStringLength(191);"],
-  "description": "MySQL Schema Fix"
- },
-
- "Laravel Route Group": {
-  "prefix": "route_group",
-  "body": [
-   "Route::group(['prefix' => '/${1:name}', 'as' => '${1:name}.'], function() {",
-   "${4}",
-   "});"
-  ]
- },
-
- "Laravel CRUD Route Group": {
-  "prefix": "crud_route_group",
-  "body": [
-   "Route::group(['prefix' => '/${1:name}', 'as' => '${1:name}.'], function() {",
-   "    Route::get('/index', [${2:Name}Controller::class, 'index'])->name('index');",
-   "    Route::get('/create', [${2:Name}Controller::class, 'create'])->name('create');",
-   "    Route::post('/store', [${2:Name}Controller::class, 'store'])->name('store');",
-   "    Route::get('/edit/{${1:name}}', [${2:Name}Controller::class, 'edit'])->name('edit');",
-   "    Route::post('/update/{${1:name}}', [${2:Name}Controller::class, 'update'])->name('update');",
-   "    Route::post('/delete/{${1:name}}', [${2:Name}Controller::class, 'delete'])->name('delete');",
-   "});"
-  ]
- },
-
- "Laravel Create API Token Field On Users Table Migration": {
-     "prefix": "create_api_token",
-     "body": [
-        "$$table->string('api_token', 80)->after('password')",
-        "    ->unique()",
-        "    ->nullable()",
-        "    ->default(null);",
-     ]
- },
-
- "Laravel CRUD Controller": {
-  "prefix": "crud_controller",
-  "body": [
-   "public function index()",
-   "{",
-   "}",
-   "",
-   "public function create()",
-   "{",
-   "}",
-   "",
-   "public function store()",
-   "{",
-   "}",
-   "",
-   "public function edit(${1:Class} $${2:var})",
-   "{",
-   "}",
-   "",
-   "public function update(${1:Class} $${2:var})",
-   "{",
-   "}",
-   "",
-   "public function delete(${1:Class} $${2:var})",
-   "{",
-   "}"
-  ]
- },
-
- "Laravel Controller Redirect Back": {
-  "prefix": "crb",
-  "body": [
-   "return back()",
-   "    ->with('${1:session_key}', __('${2:lang_key}'));"
-  ]
- },
-
- "Laravel Route": {
-  "prefix": "route",
-  "body": [
-   "Route::${1:method}('/${2:url}/${1:method}', '${3:Controller}@${1:method}')->name('${1:method}');"
-  ]
- },
-
- "Laravel Return Back": {
-  "prefix": "lv-return-back",
-  "body": [
-   "return back()",
-   "    ->with('${1:session_key}', __('${2:translation_key}'));"
-  ]
- },
-
- "Laravel Media Library Model Uses": {
-  "prefix": "lml-use",
-  "body": [
-   "use Spatie\\MediaLibrary\\HasMedia\\HasMedia;",
-   "use Spatie\\MediaLibrary\\HasMedia\\HasMediaTrait;"
-  ]
- },
-
- "Laravel Media Library Model Trait": {
-  "prefix": "lml-trait",
-  "body": ["use HasMediaTrait;"]
- },
-
- "PHP Public Function": {
-  "prefix": "pbf",
-  "body": ["public function ${1:function_name}()", "{", "    ${2:};", "}"]
- },
-
- "Laravel Drop Foreign Key": {
-     "prefix": "laravel-drop-foreign-key",
-     "body": [
-        "$$table->dropForeign([\"${1:field}_id\"]);",
-        "$$table->dropColumn(\"${1:field}_id\");",
-     ]
- },
-
- "PHP Class": {
-  "prefix": "scaffc",
-  "body": [
-   "namespace ${1:JamesPatrickKeegan}\\\\${2:SubNamespace};",
-   "",
-   "class ${3:Class} {",
-   "    public function doSomething()",
-   "    {",
-   "        echo \"Hello world!\\n\";",
-   "    }",
-   "}"
-  ]
- }
+    "PHP Date Timestamp": {
+        "prefix": "php-timestamp",
+        "body": [
+            "date(\"Y-m-d H:i:s\")"
+        ]
+    },
+    "CI Last Insert ID": {
+        "prefix": "ci-last-insert-id",
+        "body": [
+            "$this->db->insert_id()"
+        ]
+    },
+    "Ci Flash Message": {
+        "prefix": "ci-flash",
+        "body": [
+            "$$this->session->set_flashdata(${1:'message-success'}, '${2:Data berhasil diperbarui.}');"
+        ]
+    },
+    "CI POST Input": {
+        "prefix": "ci-post-input",
+        "body": [
+            "$$this->input->post('${1:input}')"
+        ]
+    },
+    "CI Dump Request Data": {
+        "prefix": "ci-dump-request",
+        "body": [
+            "echo json_encode($$this->input->get_post(null)); exit;"
+        ]
+    },
+    "CI Insert to DB": {
+        "prefix": "ci-db-insert",
+        "body": [
+            "$$this->db->insert(\"${1:table}\", [",
+            "    \"${2:key}\" => \"${3:value}\",",
+            "]);"
+        ]
+    },
+    "CI Query Builder RTL Join": {
+        "prefix": "ci-rtl-join",
+        "body": [
+            "->join('${1:right}', '${1:right}.${2:left}_id = ${2:left}s.id')"
+        ]
+    },
+    "CI Query Builder LTR Join": {
+        "prefix": "ci-ltr-join",
+        "body": [
+            "->join('${1:right}s', '${1:right}s.id = ${2:left}s.${1:right}_id')"
+        ]
+    },
+    "CI DB Transaction": {
+        "prefix": "ci-db-transaction",
+        "body": [
+            "$$this->db->trans_start();",
+            "${1:}",
+            "$$this->db->trans_complete();"
+        ]
+    },
+    "CI DB Query": {
+        "prefix": "ci-db-query",
+        "body": [
+            "$${1:var} = $$this->db->query(\"",
+            "    ${2:}",
+            "\")->result() ?? null;"
+        ]
+    },
+    "Laravel Migration Foreign Key": {
+        "prefix": "laravel-migration-foreign-key",
+        "body": [
+            "$$table->unsignedInteger('${1:field}_id');",
+            "$$table->foreign('${1:field}_id')",
+            "    ->references('id')",
+            "    ->on('${1:field}s');"
+        ]
+    },
+    "Public Static Function": {
+        "prefix": "psf",
+        "body": [
+            "public static function ${1:doSomething}()",
+            "{",
+            "    ;",
+            "}"
+        ]
+    },
+    "Laravel Factory with State": {
+        "prefix": "laravel-factory-state",
+        "body": [
+            "$$factory->state(App\\User::class, 'address', function ($$faker) {",
+            "  return [",
+            "      'address' => $$faker->address,",
+            "  ];",
+            "});"
+        ]
+    },
+    "Eloquent Model Fillable Property": {
+        "prefix": "eloquent-fillable",
+        "body": [
+            "public \\$fillable = [",
+            "    ${1}",
+            "];"
+        ]
+    },
+    "Laravel Query Builder Inner Join": {
+        "prefix": "qjoin",
+        "body": [
+            "->join('${1:first_table}', '${1:first_table}.${2:first_attr}', '=', '${3:second_table}.${4:second_attr}')"
+        ],
+        "description": "Laravel Query Builder Inner Join"
+    },
+    "Use Yajra Datatables": {
+        "prefix": "use-yajra-datatables",
+        "body": [
+            "use Yajra\\Datatables\\Datatables;"
+        ]
+    },
+    "Laravel Query Builder Where": {
+        "prefix": "qwhere",
+        "body": [
+            "->where('${1:attribute}', $${2:var})"
+        ],
+        "description": "Laravel Query Builder Where"
+    },
+    "Laravel Query Builder DB Query": {
+        "prefix": "qdb",
+        "body": [
+            "$${1:var} = DB::table('${2:table_name}')",
+            "    ->select('${3:select_attrs}')${4}",
+            "    ->get();"
+        ],
+        "description": "Laravel Query Builder DB Query"
+    },
+    "Tinker": {
+        "prefix": "tinker",
+        "body": [
+            "eval(\\Psy\\sh());"
+        ],
+        "description": "Tinker shortcut"
+    },
+    "Validate Inside Controller": {
+        "prefix": "validate",
+        "body": [
+            "$$data = $$this->validate(request(), [",
+            "    ${1}",
+            "]);"
+        ]
+    },
+    "Use Illuminate\\Validation\\Rule": {
+        "prefix": "use_validation_rule",
+        "body": "use Illuminate\\Validation\\Rule;"
+    },
+    "Use DB Facade": {
+        "prefix": "use_DB_facade",
+        "body": "use Illuminate\\Support\\Facades\\DB;"
+    },
+    "Use Collection Facade": {
+        "prefix": "use_collection_facade",
+        "body": "use Illuminate\\Support\\Collection;"
+    },
+    "Use Schema Facade": {
+        "prefix": "use_schema_facade",
+        "body": "use Illuminate\\Support\\Facades\\Schema;"
+    },
+    "DB::transaction()": {
+        "prefix": "db_transaction",
+        "body": [
+            "DB::transaction(function() {",
+            "    ${1}",
+            "});"
+        ]
+    },
+    "MySQL Schema Fix": {
+        "prefix": "mysqlfix",
+        "body": [
+            "Schema::defaultStringLength(191);"
+        ],
+        "description": "MySQL Schema Fix"
+    },
+    "Laravel Route Group": {
+        "prefix": "route_group",
+        "body": [
+            "Route::group(['prefix' => '/${1:name}', 'as' => '${1:name}.'], function() {",
+            "${4}",
+            "});"
+        ]
+    },
+    "Laravel CRUD Route Group": {
+        "prefix": "crud_route_group",
+        "body": [
+            "Route::group(['prefix' => '/${1:name}', 'as' => '${1:name}.'], function() {",
+            "    Route::get('/index', [${2:Name}Controller::class, 'index'])->name('index');",
+            "    Route::get('/create', [${2:Name}Controller::class, 'create'])->name('create');",
+            "    Route::post('/store', [${2:Name}Controller::class, 'store'])->name('store');",
+            "    Route::get('/edit/{${1:name}}', [${2:Name}Controller::class, 'edit'])->name('edit');",
+            "    Route::post('/update/{${1:name}}', [${2:Name}Controller::class, 'update'])->name('update');",
+            "    Route::post('/delete/{${1:name}}', [${2:Name}Controller::class, 'delete'])->name('delete');",
+            "});"
+        ]
+    },
+    "Laravel Create API Token Field On Users Table Migration": {
+        "prefix": "create_api_token",
+        "body": [
+            "$$table->string('api_token', 80)->after('password')",
+            "    ->unique()",
+            "    ->nullable()",
+            "    ->default(null);"
+        ]
+    },
+    "Laravel CRUD Controller": {
+        "prefix": "crud_controller",
+        "body": [
+            "public function index()",
+            "{",
+            "}",
+            "",
+            "public function create()",
+            "{",
+            "}",
+            "",
+            "public function store()",
+            "{",
+            "}",
+            "",
+            "public function edit(${1:Class} $${2:var})",
+            "{",
+            "}",
+            "",
+            "public function update(${1:Class} $${2:var})",
+            "{",
+            "}",
+            "",
+            "public function delete(${1:Class} $${2:var})",
+            "{",
+            "}"
+        ]
+    },
+    "Laravel Controller Redirect Back": {
+        "prefix": "crb",
+        "body": [
+            "return back()",
+            "    ->with('${1:session_key}', __('${2:lang_key}'));"
+        ]
+    },
+    "Laravel Route": {
+        "prefix": "route",
+        "body": [
+            "Route::${1:method}('/${2:url}/${1:method}', '${3:Controller}@${1:method}')->name('${1:method}');"
+        ]
+    },
+    "Laravel Return Back": {
+        "prefix": "lv-return-back",
+        "body": [
+            "return back()",
+            "    ->with('${1:session_key}', __('${2:translation_key}'));"
+        ]
+    },
+    "Laravel Media Library Model Uses": {
+        "prefix": "lml-use",
+        "body": [
+            "use Spatie\\MediaLibrary\\HasMedia\\HasMedia;",
+            "use Spatie\\MediaLibrary\\HasMedia\\HasMediaTrait;"
+        ]
+    },
+    "Laravel Media Library Model Trait": {
+        "prefix": "lml-trait",
+        "body": [
+            "use HasMediaTrait;"
+        ]
+    },
+    "PHP Public Function": {
+        "prefix": "pbf",
+        "body": [
+            "public function ${1:function_name}()",
+            "{",
+            "    ${2:};",
+            "}"
+        ]
+    },
+    "Laravel Drop Foreign Key": {
+        "prefix": "laravel-drop-foreign-key",
+        "body": [
+            "$$table->dropForeign([\"${1:field}_id\"]);",
+            "$$table->dropColumn(\"${1:field}_id\");"
+        ]
+    },
+    "PHP Class": {
+        "prefix": "scaffc",
+        "body": [
+            "namespace ${1:JamesPatrickKeegan}\\\\${2:SubNamespace};",
+            "",
+            "class ${3:Class} {",
+            "    public function doSomething()",
+            "    {",
+            "        echo \"Hello world!\\n\";",
+            "    }",
+            "}"
+        ]
+    }
 }

@@ -1,4 +1,25 @@
 {
+    "Bootstrap Vue.js + Inertia.js Regular Input": {
+        "prefix": "bviinput",
+        "body": [
+            "<div class=\"form-group\">",
+            "    <label for=\"${1:field}\"> ${2:Label}: </label>",
+            "    <input",
+            "        v-model=\"${1:field}\"",
+            "        class=\"form-control\"",
+            "        :class=\"{'is-invalid': $$page.errors.${1:field} }\"",
+            "        type=\"${3:text}\"",
+            "        id=\"${1:field}\"",
+            "        placeholder=\"${2:Label}\"",
+            "    />",
+            "    <div",
+            "        v-if=\"$$page.errors.${1:field}\"",
+            "        class=\"invalid-feedback\"",
+            "    >{{ $$page.errors.${1:field}[0] }}</div>",
+            "</div>",
+        ]
+    },
+
     "Vue Cleave": {
         "prefix": "vue-cleave",
         "body": [
@@ -16,14 +37,14 @@
     "Bootstrap Form Submit Button": {
         "prefix": "bs-form-submit-button",
         "body": [
-           "<div class=\"d-flex justify-content-end\">",
-           "    <button class=\"btn btn-primary\">",
-           "        Tambahkan ${1:Entity} Baru",
-           "    </button>",
-           "</div>",
+            "<div class=\"d-flex justify-content-end\">",
+            "    <button class=\"btn btn-primary\">",
+            "        Tambahkan ${1:Entity} Baru",
+            "    </button>",
+            "</div>",
         ]
     },
-   
+
 
     "Vue Multiselect": {
         "prefix": "vue-multiselect",
