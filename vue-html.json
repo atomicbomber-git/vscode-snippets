@@ -195,6 +195,13 @@
         ]
     },
 
+    "Bootstrap 4 Form Group Inertia.js Input": {
+        "prefix": "bijs-input",
+        "body": [
+            "snippet-body",
+        ]
+    },
+
     "Bootstrap Form Group Textarea": {
         "prefix": "vue-bs-textarea",
         "body": [
