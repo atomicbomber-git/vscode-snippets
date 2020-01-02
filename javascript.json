@@ -1,4 +1,15 @@
 {
+    "Inertia JS POST Request": {
+        "prefix": "ijspost",
+        "body": [
+            "this.$$inertia.post(this.submitUrl, this.form, {",
+            "    replace: false,",
+            "    preserveState: true,",
+            "    preserveScroll: false,",
+            "})",
+        ]
+    },
+
     "Vue Components Definition": {
         "prefix": "vue-components",
         "body": [

@@ -1,11 +1,26 @@
 {
+    "Bootstrap Vue Inertia.js Link": {
+        "prefix": "bvijslink",
+        "body": [
+            "<inertia-link",
+            "   class=\"btn btn-${4:state} btn-sm\"",
+            "   :href=\"${1:href}\"",
+            "   method=\"POST\"",
+            "   preserve-scroll",
+            "   >",
+            "   ${2:Action}",
+            "   <i class=\"fas fa-${3:icon}\"></i>",
+            "</inertia-link>",
+        ]
+    },
+
     "Bootstrap Vue.js + Inertia.js Regular Input": {
         "prefix": "bviinput",
         "body": [
             "<div class=\"form-group\">",
             "    <label for=\"${1:field}\"> ${2:Label}: </label>",
             "    <input",
-            "        v-model=\"${1:field}\"",
+            "        v-model=\"form.${4:${1:field}}\"",
             "        class=\"form-control\"",
             "        :class=\"{'is-invalid': $$page.errors.${1:field} }\"",
             "        type=\"${3:text}\"",

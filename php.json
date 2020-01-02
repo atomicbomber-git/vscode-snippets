@@ -78,10 +78,12 @@
     "Laravel Migration Foreign Key": {
         "prefix": "laravel-migration-foreign-key",
         "body": [
-            "$$table->unsignedInteger('${1:field}_id');",
+            "$$table->unsignedBigInteger('${1:field}_id');",
             "$$table->foreign('${1:field}_id')",
             "    ->references('id')",
-            "    ->on('${1:field}s');"
+            "    ->on('${1:field}s')",
+            "    ->onUpdate('CASCADE')",
+            "    ->onDelete('CASCADE');"
         ]
     },
     "Public Static Function": {
