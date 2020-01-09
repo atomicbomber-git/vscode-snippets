@@ -1,4 +1,11 @@
 {
+    "Short Var Docblock": {
+        "prefix": "short-vd",
+        "body": [
+            "/** @var ${1:[type]} */",
+        ]
+    },
+
     "Apply Laravel Controller Auth Middleware": {
         "prefix": "lcam",
         "body": [
